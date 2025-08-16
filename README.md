@@ -62,6 +62,30 @@ npm run build
 npm run preview
 ```
 
+## 🚀 Deployment
+
+### GitHub Pages (Automatic)
+The project is automatically deployed to GitHub Pages via GitHub Actions:
+
+1. **Push to main branch** triggers automatic build and deployment
+2. **Site URL**: https://kosurij.github.io/merge-pdf-landing/
+3. **Build artifacts** are stored in `dist/` folder
+4. **SPA routing** is handled with `_redirects` and `404.html`
+
+### Manual Deployment
+```bash
+# Build the project
+npm run build
+
+# Deploy dist/ folder to your hosting service
+```
+
+### GitHub Actions Workflow
+- **File**: `.github/workflows/deploy.yml`
+- **Triggers**: Push to main branch
+- **Steps**: Install → Type check → Lint → Build → Deploy
+- **Environment**: GitHub Pages
+
 ## 📁 Project Structure
 
 ```
