@@ -15,15 +15,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      # если без сборки — пропусти node-setup и build
+      
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npm ci
-      - run: npm run build        # собери в ./dist
-      - uses: actions/upload-pages-artifact@v3
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Type check
+        run: npm run type-check
+      
+      - name: Lint
+        run: npm run lint
+      
+      - name: Build
+        run: npm run build
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          path: dist              # или . если без сборки
+          path: dist
+
   deploy:
     needs: build
     runs-on: ubuntu-latest
