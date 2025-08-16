@@ -68,11 +68,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
-import { useRoute, RouterLink } from 'vue-router'
-
-const route = useRoute()
-const isWelcomePage = computed(() => route.path === '/welcome')
+import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { RouterLink } from 'vue-router'
 
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
