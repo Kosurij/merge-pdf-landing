@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#1C1C1C" />
+    <meta name="description" content="Welcome to Focus Time - a Pomodoro timer to help you stay focused and productive." />
+    <link rel="icon" href="/favicon.ico" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet" />
+    <title>Focus Timer</title>
+
+    <!-- ✅ Критические стили -->
+    <style>
+        :root {
+            --color-text: #EFEFEF;
+            --step-background: #2A2A2A;
+            --step-text: #EFEFEF;
+            --color-gray: #ffffffaa;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #1C1C1C;
+            color: var(--color-text);
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .welcome-page {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 32px 16px 120px 32px;
+            color: var(--color-text);
+        }
+
+        .welcome-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .title {
+            font-size: 48px;
+            font-weight: 800;
+        }
+
+        .steps {
+            display: flex;
+            flex-direction: column;
+            gap: 48px;
+            width: 100%;
+            max-width: 1080px;
+        }
+
+        .step-row {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: var(--step-background);
+            padding: 32px 16px;
+            border-radius: 16px;
+            gap: 16px;
+            box-shadow:
+                    0 0 0 1px rgba(255, 255, 255, 0.06),
+                    0 4px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .step-row-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            object-fit: contain;
+        }
+
+        .step-row-text {
+            text-align: center;
+        }
+
+        .step-row-text h2 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--step-text);
+        }
+
+        .step-row-text p {
+            font-size: 16px;
+            color: var(--color-gray);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        @media (min-width: 900px) {
+            .step-row {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+
+            .step-row-image {
+                width: 70%;
+            }
+
+            .step-row-text {
+                width: 30%;
+                text-align: left;
+            }
+        }
+    </style>
+    <!-- ✅ Отложенная загрузка основного CSS -->
+    <link rel="stylesheet" href="/src/styles/global.css" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="/src/styles/global.css"></noscript>
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+		(function(m,e,t,r,i,k,a){
+			m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();
+			for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+			k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+		})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=103479467', 'ym');
+		ym(103479467, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<div id="app"></div>
+<!-- Yandex.Metrika counter -->
+<noscript><div><img src="https://mc.yandex.ru/watch/103479467" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script type="module" src="/src/main.ts"></script>
+</body>
+</html>
