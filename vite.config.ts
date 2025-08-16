@@ -7,6 +7,7 @@ import svgLoader from 'vite-svg-loader'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/merge-pdf-landing/',
   plugins: [
     vue(),
     vueDevTools(),
@@ -16,6 +17,11 @@ export default defineConfig({
     assetsInlineLimit: 4096, // small assets inlined as base64
     cssCodeSplit: true,
     minify: 'esbuild',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
   },
   resolve: {
     alias: {

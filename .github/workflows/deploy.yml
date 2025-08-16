@@ -33,6 +33,13 @@ jobs:
       - name: Build
         run: npm run build
         
+      - name: Check build output
+        run: |
+          echo "Build contents:"
+          ls -la dist/
+          echo "HTML content:"
+          head -20 dist/index.html
+        
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
