@@ -3,13 +3,7 @@
     <div class="left">
       <RouterLink to="/" class="logoBlock">
         <div class="logo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-            <polyline points="14,2 14,8 20,8"/>
-            <line x1="16" y1="13" x2="8" y2="13"/>
-            <line x1="16" y1="17" x2="8" y2="17"/>
-            <polyline points="10,9 9,9 8,9"/>
-          </svg>
+          <!-- Логотип отображается через CSS background-image -->
         </div>
         <span class="name">Merge PDF</span>
       </RouterLink>
@@ -150,15 +144,13 @@ onBeforeUnmount(() => {
 .logo {
   width: 32px;
   height: 32px;
-  color: var(--color-accent);
+  background-image: url('@/assets/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.logo svg {
-  width: 100%;
-  height: 100%;
 }
 
 @media (max-width: 768px) {
