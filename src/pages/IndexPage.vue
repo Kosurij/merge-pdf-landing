@@ -148,10 +148,10 @@
         <div class="cta__content">
           <h2 class="cta__title">Ready to Combine PDF files?</h2>
           <p class="cta__description">
-            Join thousands of users who already use our tool
+            Start combining your PDF files today
           </p>
           <a href="https://chromewebstore.google.com" target="_blank" rel="noopener" class="btn btn--primary btn--large">
-            Get Started Free
+            Get Started
           </a>
         </div>
       </div>

@@ -9,52 +9,52 @@
   --color-text-primary: #0f172a;
   --color-text-secondary: #475569;
   --color-text-inverted: #ffffff;
-
+  
   /* Borders */
   --color-border: #e2e8f0;
   --color-border-hover: #cbd5e1;
-
+  
   /* Accent Colors */
   --color-accent: #3b82f6;
   --color-accent-hover: #2563eb;
   --color-accent-ghost: rgba(59, 130, 246, 0.1);
   --color-accent-light: #dbeafe;
-
+  
   /* Button Colors */
   --color-button-primary: #3b82f6;
   --color-button-primary-hover: #2563eb;
   --color-button-secondary: #ffffff;
   --color-button-secondary-hover: #f8fafc;
-
+  
   /* Shadows */
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-
+  
   /* PDF Card Colors */
   --pdf-page-bg: #ff3b30;
   --pdf-page-bg-secondary: #e63946;
   --pdf-page-border: #d62828;
-  --pdf-page-shadow: rgba(255, 59, 48, 0.4);
-  --pdf-page-shadow-secondary: rgba(0, 0, 0, 0.25);
-  --pdf-page-shadow-hover: rgba(255, 59, 48, 0.6);
-  --pdf-page-shadow-secondary-hover: rgba(0, 0, 0, 0.35);
+  --pdf-page-shadow: rgba(255, 59, 48, 0.25);
+  --pdf-page-shadow-secondary: rgba(0, 0, 0, 0.15);
+  --pdf-page-shadow-hover: rgba(255, 59, 48, 0.35);
+  --pdf-page-shadow-secondary-hover: rgba(0, 0, 0, 0.2);
   --pdf-text-color: #ffffff;
-  --pdf-text-shadow: rgba(0, 0, 0, 0.3);
+  --pdf-text-shadow: rgba(0, 0, 0, 0.2);
   --pdf-result-bg: #ff3b30;
   --pdf-result-bg-secondary: #e63946;
   --pdf-result-border: #d62828;
-  --pdf-result-shadow: rgba(255, 59, 48, 0.5);
-  --pdf-result-shadow-secondary: rgba(0, 0, 0, 0.3);
-  --pdf-result-shadow-hover: rgba(255, 59, 48, 0.7);
-  --pdf-result-shadow-secondary-hover: rgba(0, 0, 0, 0.45);
+  --pdf-result-shadow: rgba(255, 59, 48, 0.3);
+  --pdf-result-shadow-secondary: rgba(0, 0, 0, 0.2);
+  --pdf-result-shadow-hover: rgba(255, 59, 48, 0.4);
+  --pdf-result-shadow-secondary-hover: rgba(0, 0, 0, 0.25);
   --pdf-result-text-color: #ffffff;
-  --pdf-result-text-shadow: rgba(0, 0, 0, 0.4);
-
+  --pdf-result-text-shadow: rgba(0, 0, 0, 0.25);
+  
   /* 3D Effects */
-  --pdf-3d-depth: 15px;
-  --pdf-3d-depth-hover: 25px;
-  --pdf-3d-blur: 25px;
-  --pdf-3d-blur-hover: 40px;
+  --pdf-3d-depth: 8px;
+  --pdf-3d-depth-hover: 12px;
+  --pdf-3d-blur: 20px;
+  --pdf-3d-blur-hover: 30px;
 }
 
 /* CSS Variables for Dark Theme */
@@ -86,27 +86,27 @@ html[data-theme='dark'] {
   --pdf-page-bg: #ff3b30;
   --pdf-page-bg-secondary: #e63946;
   --pdf-page-border: #d62828;
-  --pdf-page-shadow: rgba(255, 59, 48, 0.6);
-  --pdf-page-shadow-secondary: rgba(0, 0, 0, 0.4);
-  --pdf-page-shadow-hover: rgba(255, 59, 48, 0.8);
-  --pdf-page-shadow-secondary-hover: rgba(0, 0, 0, 0.5);
+  --pdf-page-shadow: rgba(255, 59, 48, 0.4);
+  --pdf-page-shadow-secondary: rgba(0, 0, 0, 0.3);
+  --pdf-page-shadow-hover: rgba(255, 59, 48, 0.5);
+  --pdf-page-shadow-secondary-hover: rgba(0, 0, 0, 0.4);
   --pdf-text-color: #ffffff;
-  --pdf-text-shadow: rgba(0, 0, 0, 0.5);
+  --pdf-text-shadow: rgba(0, 0, 0, 0.4);
   --pdf-result-bg: #ff3b30;
   --pdf-result-bg-secondary: #e63946;
   --pdf-result-border: #d62828;
-  --pdf-result-shadow: rgba(255, 59, 48, 0.7);
-  --pdf-result-shadow-secondary: rgba(0, 0, 0, 0.5);
-  --pdf-result-shadow-hover: rgba(255, 59, 48, 0.9);
-  --pdf-result-shadow-secondary-hover: rgba(0, 0, 0, 0.6);
+  --pdf-result-shadow: rgba(255, 59, 48, 0.5);
+  --pdf-result-shadow-secondary: rgba(0, 0, 0, 0.4);
+  --pdf-result-shadow-hover: rgba(255, 59, 48, 0.6);
+  --pdf-result-shadow-secondary-hover: rgba(0, 0, 0, 0.5);
   --pdf-result-text-color: #ffffff;
-  --pdf-result-text-shadow: rgba(0, 0, 0, 0.6);
+  --pdf-result-text-shadow: rgba(0, 0, 0, 0.5);
   
   /* 3D Effects for Dark Theme */
-  --pdf-3d-depth: 20px;
-  --pdf-3d-depth-hover: 30px;
-  --pdf-3d-blur: 30px;
-  --pdf-3d-blur-hover: 45px;
+  --pdf-3d-depth: 12px;
+  --pdf-3d-depth-hover: 18px;
+  --pdf-3d-blur: 25px;
+  --pdf-3d-blur-hover: 35px;
 }
 
 /* Base Styles */
