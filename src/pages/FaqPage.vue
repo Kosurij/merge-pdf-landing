@@ -2,7 +2,7 @@
   <div class="faq-page">
     <header class="faq-header">
       <h1 class="title">❓ Frequently Asked Questions</h1>
-      <p class="subtitle">Find answers to the most common questions about Merge PDF</p>
+      <p class="subtitle">Find answers to the most common questions about Combine PDF</p>
     </header>
 
     <div class="faq-wrapper">
@@ -16,9 +16,9 @@ import AccordionGroup from '@/components/AccordionGroup.vue'
 
 const faqs = [
   {
-    title: 'What is Merge PDF?',
+    title: 'What is Combine PDF?',
     description:
-        'Merge PDF is an online tool for combining multiple PDF files into one document. You can upload files, arrange page order, and download the result with one click.',
+        'Combine PDF is an online tool for merge multiple PDF files into one document. You can upload files, arrange page order, and download the result with one click.',
   },
   {
     title: 'Are my files secure?',
@@ -48,12 +48,12 @@ const faqs = [
   {
     title: 'Does it work on mobile devices?',
     description:
-        'Yes, Merge PDF is fully responsive and works on all devices: computers, tablets, and smartphones.',
+        'Yes, Combine PDF is fully responsive and works on all devices: computers, tablets, and smartphones.',
   },
   {
     title: 'Do I need to install software?',
     description:
-        'No! Merge PDF works right in your browser. Just open the website and start working. No additional programs or extensions required.',
+        'No! Combine PDF works right in your browser. Just open the website and start working. No additional programs or extensions required.',
   },
   {
     title: 'How many files can I merge at once?',

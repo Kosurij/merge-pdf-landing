@@ -7,12 +7,12 @@ import { useRoute } from 'vue-router'
 const route = useRoute()
 
 const TITLES: Record<string, string> = {
-  '/welcome': 'Welcome | Merge PDF',
-  '/faq': 'FAQ | Merge PDF',
-  '/': 'Merge PDF - Combine PDF Files Online',
+  '/welcome': 'Welcome | Combine PDF',
+  '/faq': 'FAQ | Combine PDF',
+  '/': 'Combine PDF - Merge PDF Files Online',
 }
 
-const getTitleFromPath = (path: string): string => TITLES[path] || 'Merge PDF'
+const getTitleFromPath = (path: string): string => TITLES[path] || 'Combine PDF'
 
 watch(
     () => route.path,

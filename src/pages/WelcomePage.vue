@@ -1,7 +1,7 @@
 <template>
   <div class="welcome-page">
     <header class="welcome-header">
-      <h1 class="title">🎉 Welcome to Merge PDF</h1>
+      <h1 class="title">🎉 Welcome to Combine PDF</h1>
       <p class="subtitle">
         Your extension has been installed successfully! Follow these steps to get started.
       </p>
@@ -22,7 +22,7 @@
         <div class="step-row-text">
           <h2>📌 Pin the Extension</h2>
           <p>
-            Click the puzzle icon in your browser toolbar, then pin <strong>Merge PDF</strong> to keep it visible and easily accessible.
+            Click the puzzle icon in your browser toolbar, then pin <strong>Combine PDF</strong> to keep it visible and easily accessible.
           </p>
         </div>
       </section>
@@ -31,7 +31,7 @@
         <div class="step-row-visual">
           <div class="extension-usage">
             <div class="extension-popup">
-              <div class="popup-header">Merge PDF</div>
+              <div class="popup-header">Combine PDF</div>
               <div class="popup-content">
                 <div class="upload-area">📁 Drop PDF files here</div>
                 <div class="action-button">Merge Files</div>
@@ -42,7 +42,7 @@
         <div class="step-row-text">
           <h2>▶️ Start Using</h2>
           <p>
-            Click the <strong>Merge PDF</strong> icon in your toolbar to start merging your first PDF files.
+            Click the <strong>Combine PDF</strong> icon in your toolbar to start merging your first PDF files.
           </p>
         </div>
       </section>

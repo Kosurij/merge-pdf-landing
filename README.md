@@ -1,4 +1,4 @@
-# Merge PDF Landing
+# Combine PDF Landing
 
 Landing page for online PDF merging tool.
 

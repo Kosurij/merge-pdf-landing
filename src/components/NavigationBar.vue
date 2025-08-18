@@ -5,7 +5,7 @@
         <div class="logo">
           <!-- Логотип отображается через CSS background-image -->
         </div>
-        <span class="name">Merge PDF</span>
+        <span class="name">Combine PDF</span>
       </RouterLink>
 
       <nav class="desktop-nav">
