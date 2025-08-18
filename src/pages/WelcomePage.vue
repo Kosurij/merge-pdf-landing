@@ -10,13 +10,12 @@
     <main class="steps">
       <section class="step-row">
         <div class="step-row-visual">
-          <div class="extension-pin">
-            <div class="browser-toolbar">
-              <div class="toolbar-item">🔍</div>
-              <div class="toolbar-item">📚</div>
-              <div class="toolbar-item extension-icon">📄</div>
-              <div class="toolbar-item">⚙️</div>
-            </div>
+          <div class="step-image-container">
+            <img 
+              src="@/assets/first_step.webp" 
+              alt="Pin the extension to browser toolbar" 
+              class="step-image"
+            />
           </div>
         </div>
         <div class="step-row-text">
@@ -29,14 +28,12 @@
 
       <section class="step-row">
         <div class="step-row-visual">
-          <div class="extension-usage">
-            <div class="extension-popup">
-              <div class="popup-header">Combine PDF</div>
-              <div class="popup-content">
-                <div class="upload-area">📁 Drop PDF files here</div>
-                <div class="action-button">Merge Files</div>
-              </div>
-            </div>
+          <div class="step-image-container">
+            <img 
+              src="@/assets/second_step.webp" 
+              alt="Start using the extension" 
+              class="step-image"
+            />
           </div>
         </div>
         <div class="step-row-text">
@@ -139,93 +136,28 @@ onMounted(launchConfetti)
   min-height: 200px;
 }
 
-/* Extension Pin */
-.extension-pin {
-  background: var(--color-background);
-  border: 2px solid var(--color-border);
+/* Step Images */
+.step-image-container {
+  width: 100%;
+  max-width: 500px;
   border-radius: 12px;
-  padding: 20px;
-  box-shadow: var(--shadow-md);
-}
-
-.browser-toolbar {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.toolbar-item {
-  width: 40px;
-  height: 40px;
-  background: var(--color-background-tertiary);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-}
-
-.extension-icon {
-  background: var(--color-accent-light);
-  border-color: var(--color-accent);
-  color: var(--color-accent);
-}
-
-/* Extension Usage */
-.extension-usage {
-  background: var(--color-background);
-  border: 2px solid var(--color-border);
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: var(--shadow-md);
-}
-
-.extension-popup {
-  width: 300px;
-  background: var(--color-background);
-  border: 1px solid var(--color-border);
-  border-radius: 8px;
   overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.popup-header {
-  background: var(--color-accent);
-  color: var(--color-text-inverted);
-  padding: 12px 16px;
-  font-weight: 600;
-  text-align: center;
+.step-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
 }
 
-.popup-content {
-  padding: 20px;
-}
 
-.upload-area {
-  background: var(--color-background-tertiary);
-  border: 2px dashed var(--color-border);
-  border-radius: 8px;
-  padding: 40px 20px;
-  text-align: center;
-  color: var(--color-text-secondary);
-  margin-bottom: 16px;
-  font-size: 16px;
-}
 
-.action-button {
-  background: var(--color-accent);
-  color: var(--color-text-inverted);
-  padding: 12px 24px;
-  border-radius: 6px;
-  text-align: center;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
 
-.action-button:hover {
-  background: var(--color-accent-hover);
-}
 
 /* === Text === */
 .step-row-text {
