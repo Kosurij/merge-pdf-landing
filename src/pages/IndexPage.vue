@@ -59,9 +59,9 @@
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
               </svg>
             </div>
-            <h3 class="feature-card__title">Fast</h3>
+            <h3 class="feature-card__title">Fast & Simple</h3>
             <p class="feature-card__description">
-              Combine PDF files in seconds with our optimized algorithm
+              Combine PDF files in seconds with our optimized algorithm and intuitive interface - no complex settings required
             </p>
           </div>
 
@@ -86,18 +86,6 @@
             <h3 class="feature-card__title">Quality</h3>
             <p class="feature-card__description">
               Preserve original PDF quality without any data loss
-            </p>
-          </div>
-
-          <div class="feature-card">
-            <div class="feature-card__icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-              </svg>
-            </div>
-            <h3 class="feature-card__title">Simple</h3>
-            <p class="feature-card__description">
-              Intuitive interface - no complex settings required
             </p>
           </div>
         </div>
