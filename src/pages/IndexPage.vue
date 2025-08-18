@@ -8,7 +8,7 @@
           <span class="hero__title-accent">quickly and easily</span>
         </h1>
         <p class="hero__subtitle">
-          Powerful online tool for merging PDF documents. 
+          Powerful online tool for merging PDF documents.
           Upload, merge, and download in just a few clicks.
         </p>
         <div class="hero__actions">
@@ -28,14 +28,16 @@
       <div class="hero__visual">
         <div class="hero__image">
           <div class="pdf-preview">
-            <div class="pdf-page pdf-page--1">
-              <span class="pdf-text">PDF</span>
-            </div>
-            <div class="pdf-page pdf-page--2">
-              <span class="pdf-text">PDF</span>
-            </div>
-            <div class="pdf-page pdf-page--3">
-              <span class="pdf-text">PDF</span>
+            <div class="pdf-drop-zone">
+              <div class="pdf-page pdf-page--1">
+                <span class="pdf-text">PDF</span>
+              </div>
+              <div class="pdf-page pdf-page--2">
+                <span class="pdf-text">PDF</span>
+              </div>
+              <div class="pdf-page pdf-page--3">
+                <span class="pdf-text">PDF</span>
+              </div>
             </div>
             <div class="pdf-arrow"></div>
             <div class="pdf-result">
@@ -62,7 +64,7 @@
               Combine PDF files in seconds with our optimized algorithm
             </p>
           </div>
-          
+
           <div class="feature-card">
             <div class="feature-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -74,7 +76,7 @@
               Your files are processed locally in the browser and never uploaded to our servers
             </p>
           </div>
-          
+
           <div class="feature-card">
             <div class="feature-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -86,7 +88,7 @@
               Preserve original PDF quality without any data loss
             </p>
           </div>
-          
+
           <div class="feature-card">
             <div class="feature-card__icon">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -116,7 +118,7 @@
               </p>
             </div>
           </div>
-          
+
           <div class="step">
             <div class="step__number">2</div>
             <div class="step__content">
@@ -126,7 +128,7 @@
               </p>
             </div>
           </div>
-          
+
           <div class="step">
             <div class="step__number">3</div>
             <div class="step__content">
@@ -241,7 +243,6 @@ const scrollToHowItWorks = () => {
 .hero__image {
   position: relative;
   width: 100%;
-  max-width: 450px;
 }
 
 /* PDF Preview Animation */
@@ -250,8 +251,57 @@ const scrollToHowItWorks = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 20px;
   animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+.pdf-drop-zone {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px;
+  border: 3px dashed rgba(59, 130, 246, 0.4);
+  border-radius: 16px;
+  background: linear-gradient(135deg,
+    rgba(59, 130, 246, 0.05) 0%,
+    rgba(59, 130, 246, 0.02) 100%);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 8px 25px rgba(59, 130, 246, 0.1),
+    0 4px 12px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+  animation: dropZoneGlow 2s ease-in-out infinite alternate;
+}
+
+.pdf-drop-zone:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  background: linear-gradient(135deg,
+    rgba(59, 130, 246, 0.08) 0%,
+    rgba(59, 130, 246, 0.04) 100%);
+  box-shadow:
+    0 12px 35px rgba(59, 130, 246, 0.15),
+    0 6px 18px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+@keyframes dropZoneGlow {
+  0% {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow:
+      0 8px 25px rgba(59, 130, 246, 0.1),
+      0 4px 12px rgba(0, 0, 0, 0.05),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    border-color: rgba(59, 130, 246, 0.6);
+    box-shadow:
+      0 12px 35px rgba(59, 130, 246, 0.15),
+      0 6px 18px rgba(0, 0, 0, 0.08),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
 }
 
 @keyframes fadeInUp {
@@ -269,101 +319,153 @@ const scrollToHowItWorks = () => {
   width: 90px;
   height: 110px;
   background: linear-gradient(135deg, var(--pdf-page-bg) 0%, var(--pdf-page-bg-secondary) 100%);
-  border: none;
-  border-radius: 10px;
-  box-shadow: 
-    0 4px 12px var(--pdf-page-shadow),
-    0 2px 6px var(--pdf-page-shadow-secondary);
+  border: 2px solid var(--pdf-page-border);
+  border-radius: 12px;
+  box-shadow:
+    0 8px 25px var(--pdf-page-shadow),
+    0 4px 12px var(--pdf-page-shadow-secondary),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(255, 59, 48, 0.2);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   animation: float 3s ease-in-out infinite, fadeInScale 0.8s ease-out both;
   transform-style: preserve-3d;
   perspective: 1000px;
 }
 
+.pdf-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(0, 0, 0, 0.1) 100%);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
 .pdf-page:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 
-    0 6px 16px var(--pdf-page-shadow-hover),
-    0 3px 8px var(--pdf-page-shadow-secondary-hover);
+  transform: translateY(-8px) scale(1.05) rotateY(5deg) rotateX(5deg);
+  box-shadow:
+    0 15px 35px var(--pdf-page-shadow-hover),
+    0 8px 20px var(--pdf-page-shadow-secondary-hover),
+    0 4px 12px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 0 30px rgba(255, 59, 48, 0.4);
   animation-play-state: paused;
 }
 
-.pdf-page--1 { 
-  transform: rotate(-5deg) translateY(-2px);
+.pdf-page--1 {
+  transform: rotate(-8deg) translateY(-4px) translateZ(20px);
   z-index: 3;
   animation-delay: 0s, 0.8s;
+  box-shadow:
+    0 12px 30px var(--pdf-page-shadow),
+    0 6px 15px var(--pdf-page-shadow-secondary),
+    0 3px 10px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
-.pdf-page--2 { 
-  transform: rotate(2deg) translateY(-1px);
+.pdf-page--2 {
+  transform: rotate(4deg) translateY(-2px) translateZ(10px);
   z-index: 2;
   animation-delay: 0.5s, 1s;
+  box-shadow:
+    0 10px 25px var(--pdf-page-shadow),
+    0 5px 12px var(--pdf-page-shadow-secondary),
+    0 2px 8px rgba(0, 0, 0, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
-.pdf-page--3 { 
-  transform: rotate(-3deg) translateY(1px);
+.pdf-page--3 {
+  transform: rotate(-6deg) translateY(2px) translateZ(5px);
   z-index: 1;
   animation-delay: 1s, 1.2s;
+  box-shadow:
+    0 8px 20px var(--pdf-page-shadow),
+    0 4px 10px var(--pdf-page-shadow-secondary),
+    0 2px 6px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 @keyframes float {
-  0%, 100% { 
-    transform: translateY(0px) rotate(var(--pdf-rotation));
+  0%, 100% {
+    transform: translateY(0px) rotate(var(--pdf-rotation)) translateZ(var(--pdf-z));
   }
-  50% { 
-    transform: translateY(-4px) rotate(var(--pdf-rotation));
+  50% {
+    transform: translateY(-6px) rotate(var(--pdf-rotation)) translateZ(var(--pdf-z));
   }
 }
 
-.pdf-page--1 { --pdf-rotation: -5deg; }
-.pdf-page--2 { --pdf-rotation: 2deg; }
-.pdf-page--3 { --pdf-rotation: -3deg; }
+.pdf-page--1 {
+  --pdf-rotation: -8deg;
+  --pdf-z: 20px;
+}
+.pdf-page--2 {
+  --pdf-rotation: 4deg;
+  --pdf-z: 10px;
+}
+.pdf-page--3 {
+  --pdf-rotation: -6deg;
+  --pdf-z: 5px;
+}
 
 .pdf-text {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) translateZ(8px);
+  transform: translate(-50%, -50%) translateZ(15px);
   font-family: 'Arial', sans-serif;
   font-weight: 900;
-  font-size: 18px;
+  font-size: 20px;
   color: var(--pdf-text-color);
-  text-shadow: 
-    0 2px 4px var(--pdf-text-shadow),
-    0 4px 8px rgba(0, 0, 0, 0.2);
+  text-shadow:
+    0 3px 6px var(--pdf-text-shadow),
+    0 6px 12px rgba(0, 0, 0, 0.3);
   user-select: none;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
-  letter-spacing: 1px;
+  filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2));
+  letter-spacing: 1.5px;
+  transition: all 0.3s ease;
 }
 
-
+.pdf-page:hover .pdf-text {
+  transform: translate(-50%, -50%) translateZ(25px) scale(1.1);
+  text-shadow:
+    0 4px 8px var(--pdf-text-shadow),
+    0 8px 16px rgba(0, 0, 0, 0.4);
+}
 
 .pdf-arrow {
-  font-size: 24px;
+  font-size: 28px;
   color: var(--color-accent);
   font-weight: bold;
   animation: slideRight 1.5s ease-in-out infinite;
-  margin: 0 12px;
+  margin: 0 16px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
 }
 
 .pdf-arrow::before {
   content: '→';
   animation: slideRight 1.5s ease-in-out infinite;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 @keyframes slideRight {
-  0%, 100% { 
+  0%, 100% {
     transform: translateX(0px);
     opacity: 1;
   }
-  50% { 
-    transform: translateX(3px);
+  50% {
+    transform: translateX(4px);
     opacity: 0.9;
   }
 }
@@ -372,37 +474,65 @@ const scrollToHowItWorks = () => {
   width: 90px;
   height: 110px;
   background: linear-gradient(135deg, var(--pdf-result-bg) 0%, var(--pdf-result-bg-secondary) 100%);
-  border: none;
-  border-radius: 10px;
-  box-shadow: 
-    0 4px 12px var(--pdf-result-shadow),
-    0 2px 6px var(--pdf-result-shadow-secondary);
+  border: 2px solid var(--pdf-result-border);
+  border-radius: 12px;
+  box-shadow:
+    0 12px 30px var(--pdf-result-shadow),
+    0 6px 15px var(--pdf-result-shadow-secondary),
+    0 3px 10px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 25px rgba(255, 59, 48, 0.3);
   position: relative;
   overflow: hidden;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   animation: resultGlow 2s ease-in-out infinite alternate, fadeInScale 0.8s ease-out 1.5s both;
   transform-style: preserve-3d;
   perspective: 1000px;
+  transform: translateZ(15px);
+}
+
+.pdf-result::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0.08) 50%,
+    rgba(0, 0, 0, 0.1) 100%);
+  border-radius: 10px;
+  pointer-events: none;
 }
 
 .pdf-result:hover {
-  transform: translateY(-3px) scale(1.03);
-  box-shadow: 
-    0 6px 16px var(--pdf-result-shadow-hover),
-    0 3px 8px var(--pdf-result-shadow-secondary-hover);
+  transform: translateY(-8px) scale(1.05) rotateY(-3deg) rotateX(3deg) translateZ(25px);
+  box-shadow:
+    0 20px 40px var(--pdf-result-shadow-hover),
+    0 10px 25px var(--pdf-result-shadow-secondary-hover),
+    0 5px 15px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 0 40px rgba(255, 59, 48, 0.5);
   animation-play-state: paused;
 }
 
 @keyframes resultGlow {
-  0% { 
-    box-shadow: 
-      0 4px 12px var(--pdf-result-shadow),
-      0 2px 6px var(--pdf-result-shadow-secondary);
+  0% {
+    box-shadow:
+      0 12px 30px var(--pdf-result-shadow),
+      0 6px 15px var(--pdf-result-shadow-secondary),
+      0 3px 10px rgba(0, 0, 0, 0.25),
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 0 25px rgba(255, 59, 48, 0.3);
   }
-  100% { 
-    box-shadow: 
-      0 6px 16px var(--pdf-result-shadow-hover),
-      0 3px 8px var(--pdf-result-shadow-secondary-hover);
+  100% {
+    box-shadow:
+      0 15px 35px var(--pdf-result-shadow-hover),
+      0 8px 20px var(--pdf-result-shadow-secondary-hover),
+      0 4px 12px rgba(0, 0, 0, 0.3),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15),
+      0 0 35px rgba(255, 59, 48, 0.4);
   }
 }
 
@@ -414,11 +544,11 @@ const scrollToHowItWorks = () => {
 @keyframes fadeInScale {
   from {
     opacity: 0;
-    transform: scale(0.9) rotate(var(--pdf-rotation));
+    transform: scale(0.8) rotate(var(--pdf-rotation)) translateZ(var(--pdf-z));
   }
   to {
     opacity: 1;
-    transform: scale(1) rotate(var(--pdf-rotation));
+    transform: scale(1) rotate(var(--pdf-rotation)) translateZ(var(--pdf-z));
   }
 }
 
@@ -641,23 +771,23 @@ const scrollToHowItWorks = () => {
     gap: 32px;
     padding: 32px 16px;
   }
-  
+
   .hero__title {
     font-size: 30px;
   }
-  
+
   .hero__actions {
     justify-content: center;
   }
-  
+
   .features__grid {
     grid-template-columns: 1fr;
   }
-  
+
   .steps {
     grid-template-columns: 1fr;
   }
-  
+
   .btn--large {
     padding: 16px 24px;
     font-size: 16px;
@@ -669,7 +799,7 @@ const scrollToHowItWorks = () => {
     flex-direction: column;
     align-items: center;
   }
-  
+
   .btn {
     width: 100%;
     max-width: 300px;
@@ -684,67 +814,93 @@ const scrollToHowItWorks = () => {
     flex-wrap: wrap;
     justify-content: center;
   }
-  
+
+  .pdf-drop-zone {
+    gap: 10px;
+    padding: 16px;
+    border-width: 2px;
+  }
+
   .pdf-page {
     width: 65px;
     height: 80px;
   }
-  
+
   .pdf-result {
     width: 65px;
     height: 80px;
   }
-  
+
   .pdf-text {
     font-size: 14px;
   }
-  
+
   .pdf-arrow {
     width: 28px;
     height: 28px;
     font-size: 18px;
     margin: 0 8px;
   }
-  
-  .pdf-page--1 { 
-    transform: rotate(-4deg) translateY(-1px);
+
+  .pdf-page--1 {
+    transform: rotate(-6deg) translateY(-2px) translateZ(15px);
   }
-  .pdf-page--2 { 
-    transform: rotate(1deg) translateY(0px);
+  .pdf-page--2 {
+    transform: rotate(3deg) translateY(-1px) translateZ(8px);
   }
-  .pdf-page--3 { 
-    transform: rotate(-2deg) translateY(1px);
+  .pdf-page--3 {
+    transform: rotate(-4deg) translateY(1px) translateZ(4px);
   }
-  
-  .pdf-page--1 { --pdf-rotation: -4deg; }
-  .pdf-page--2 { --pdf-rotation: 1deg; }
-  .pdf-page--3 { --pdf-rotation: -2deg; }
+
+  .pdf-page--1 { --pdf-rotation: -6deg; --pdf-z: 15px; }
+  .pdf-page--2 { --pdf-rotation: 3deg; --pdf-z: 8px; }
+  .pdf-page--3 { --pdf-rotation: -4deg; --pdf-z: 4px; }
 }
 
 @media (max-width: 480px) {
   .pdf-preview {
     gap: 6px;
   }
-  
+
+  .pdf-drop-zone {
+    gap: 4px;
+    padding: 12px;
+    border-width: 2px;
+  }
+
   .pdf-page {
     width: 55px;
     height: 70px;
   }
-  
+
   .pdf-result {
     width: 55px;
     height: 70px;
   }
-  
+
   .pdf-text {
     font-size: 12px;
   }
-  
+
   .pdf-arrow {
     width: 24px;
     height: 24px;
     font-size: 14px;
     margin: 0 6px;
   }
+
+  .pdf-page--1 {
+    transform: rotate(-5deg) translateY(-1px) translateZ(12px);
+  }
+  .pdf-page--2 {
+    transform: rotate(2deg) translateY(0px) translateZ(6px);
+  }
+  .pdf-page--3 {
+    transform: rotate(-3deg) translateY(1px) translateZ(3px);
+  }
+
+  .pdf-page--1 { --pdf-rotation: -5deg; --pdf-z: 12px; }
+  .pdf-page--2 { --pdf-rotation: 2deg; --pdf-z: 6px; }
+  .pdf-page--3 { --pdf-rotation: -3deg; --pdf-z: 3px; }
 }
 </style>
