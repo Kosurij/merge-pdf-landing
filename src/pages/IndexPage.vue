@@ -4,7 +4,7 @@
     <section class="hero">
       <div class="hero__content">
         <h1 class="hero__title">
-          Merge PDF files
+          Combine PDF files
           <span class="hero__title-accent">quickly and easily</span>
         </h1>
         <p class="hero__subtitle">
@@ -28,11 +28,19 @@
       <div class="hero__visual">
         <div class="hero__image">
           <div class="pdf-preview">
-            <div class="pdf-page pdf-page--1"></div>
-            <div class="pdf-page pdf-page--2"></div>
-            <div class="pdf-page pdf-page--3"></div>
-            <div class="pdf-arrow">→</div>
-            <div class="pdf-result"></div>
+            <div class="pdf-page pdf-page--1">
+              <span class="pdf-text">PDF</span>
+            </div>
+            <div class="pdf-page pdf-page--2">
+              <span class="pdf-text">PDF</span>
+            </div>
+            <div class="pdf-page pdf-page--3">
+              <span class="pdf-text">PDF</span>
+            </div>
+            <div class="pdf-arrow"></div>
+            <div class="pdf-result">
+              <span class="pdf-text">PDF</span>
+            </div>
           </div>
         </div>
       </div>
@@ -51,7 +59,7 @@
             </div>
             <h3 class="feature-card__title">Fast</h3>
             <p class="feature-card__description">
-              Merge PDF files in seconds with our optimized algorithm
+              Combine PDF files in seconds with our optimized algorithm
             </p>
           </div>
           
@@ -136,7 +144,7 @@
     <section class="cta">
       <div class="container">
         <div class="cta__content">
-          <h2 class="cta__title">Ready to merge PDF files?</h2>
+          <h2 class="cta__title">Ready to Combine PDF files?</h2>
           <p class="cta__description">
             Join thousands of users who already use our tool
           </p>
@@ -193,7 +201,7 @@ const scrollToHowItWorks = () => {
 }
 
 .hero__content {
-  max-width: 600px;
+  max-width: 650px;
 }
 
 .hero__title {
@@ -233,7 +241,7 @@ const scrollToHowItWorks = () => {
 .hero__image {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 450px;
 }
 
 /* PDF Preview Animation */
@@ -243,41 +251,175 @@ const scrollToHowItWorks = () => {
   align-items: center;
   justify-content: center;
   gap: 16px;
+  animation: fadeInUp 1s ease-out 0.5s both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .pdf-page {
-  width: 80px;
-  height: 100px;
-  background: var(--color-background-tertiary);
-  border: 2px solid var(--color-border);
-  border-radius: 6px;
-  box-shadow: var(--shadow-md);
+  width: 90px;
+  height: 110px;
+  background: linear-gradient(135deg, var(--pdf-page-bg) 0%, var(--pdf-page-bg-secondary) 100%);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 
+    0 4px 12px var(--pdf-page-shadow),
+    0 2px 6px var(--pdf-page-shadow-secondary);
   position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite, fadeInScale 0.8s ease-out both;
+  transform-style: preserve-3d;
+  perspective: 1000px;
 }
 
-.pdf-page--1 { transform: rotate(-5deg); }
-.pdf-page--2 { transform: rotate(2deg); }
-.pdf-page--3 { transform: rotate(-3deg); }
+.pdf-page:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 
+    0 6px 16px var(--pdf-page-shadow-hover),
+    0 3px 8px var(--pdf-page-shadow-secondary-hover);
+  animation-play-state: paused;
+}
+
+.pdf-page--1 { 
+  transform: rotate(-5deg) translateY(-2px);
+  z-index: 3;
+  animation-delay: 0s, 0.8s;
+}
+.pdf-page--2 { 
+  transform: rotate(2deg) translateY(-1px);
+  z-index: 2;
+  animation-delay: 0.5s, 1s;
+}
+.pdf-page--3 { 
+  transform: rotate(-3deg) translateY(1px);
+  z-index: 1;
+  animation-delay: 1s, 1.2s;
+}
+
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(var(--pdf-rotation));
+  }
+  50% { 
+    transform: translateY(-4px) rotate(var(--pdf-rotation));
+  }
+}
+
+.pdf-page--1 { --pdf-rotation: -5deg; }
+.pdf-page--2 { --pdf-rotation: 2deg; }
+.pdf-page--3 { --pdf-rotation: -3deg; }
+
+.pdf-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) translateZ(8px);
+  font-family: 'Arial', sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  color: var(--pdf-text-color);
+  text-shadow: 
+    0 2px 4px var(--pdf-text-shadow),
+    0 4px 8px rgba(0, 0, 0, 0.2);
+  user-select: none;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.15));
+  letter-spacing: 1px;
+}
+
+
 
 .pdf-arrow {
   font-size: 24px;
   color: var(--color-accent);
   font-weight: bold;
-  animation: pulse 2s infinite;
+  animation: slideRight 1.5s ease-in-out infinite;
+  margin: 0 12px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+}
+
+.pdf-arrow::before {
+  content: '→';
+  animation: slideRight 1.5s ease-in-out infinite;
+}
+
+@keyframes slideRight {
+  0%, 100% { 
+    transform: translateX(0px);
+    opacity: 1;
+  }
+  50% { 
+    transform: translateX(3px);
+    opacity: 0.9;
+  }
 }
 
 .pdf-result {
-  width: 80px;
-  height: 100px;
-  background: var(--color-accent-light);
-  border: 2px solid var(--color-accent);
-  border-radius: 6px;
-  box-shadow: var(--shadow-lg);
+  width: 90px;
+  height: 110px;
+  background: linear-gradient(135deg, var(--pdf-result-bg) 0%, var(--pdf-result-bg-secondary) 100%);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 
+    0 4px 12px var(--pdf-result-shadow),
+    0 2px 6px var(--pdf-result-shadow-secondary);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  animation: resultGlow 2s ease-in-out infinite alternate, fadeInScale 0.8s ease-out 1.5s both;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.pdf-result:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 
+    0 6px 16px var(--pdf-result-shadow-hover),
+    0 3px 8px var(--pdf-result-shadow-secondary-hover);
+  animation-play-state: paused;
+}
+
+@keyframes resultGlow {
+  0% { 
+    box-shadow: 
+      0 4px 12px var(--pdf-result-shadow),
+      0 2px 6px var(--pdf-result-shadow-secondary);
+  }
+  100% { 
+    box-shadow: 
+      0 6px 16px var(--pdf-result-shadow-hover),
+      0 3px 8px var(--pdf-result-shadow-secondary-hover);
+  }
 }
 
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.1); }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9) rotate(var(--pdf-rotation));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(var(--pdf-rotation));
+  }
 }
 
 /* Buttons */
@@ -474,7 +616,7 @@ const scrollToHowItWorks = () => {
 
 .cta__content {
   text-align: center;
-  max-width: 600px;
+  max-width: 650px;
   margin: 0 auto;
 }
 
@@ -532,6 +674,77 @@ const scrollToHowItWorks = () => {
     width: 100%;
     max-width: 300px;
     justify-content: center;
+  }
+}
+
+/* Responsive PDF Preview */
+@media (max-width: 768px) {
+  .pdf-preview {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .pdf-page {
+    width: 65px;
+    height: 80px;
+  }
+  
+  .pdf-result {
+    width: 65px;
+    height: 80px;
+  }
+  
+  .pdf-text {
+    font-size: 14px;
+  }
+  
+  .pdf-arrow {
+    width: 28px;
+    height: 28px;
+    font-size: 18px;
+    margin: 0 8px;
+  }
+  
+  .pdf-page--1 { 
+    transform: rotate(-4deg) translateY(-1px);
+  }
+  .pdf-page--2 { 
+    transform: rotate(1deg) translateY(0px);
+  }
+  .pdf-page--3 { 
+    transform: rotate(-2deg) translateY(1px);
+  }
+  
+  .pdf-page--1 { --pdf-rotation: -4deg; }
+  .pdf-page--2 { --pdf-rotation: 1deg; }
+  .pdf-page--3 { --pdf-rotation: -2deg; }
+}
+
+@media (max-width: 480px) {
+  .pdf-preview {
+    gap: 6px;
+  }
+  
+  .pdf-page {
+    width: 55px;
+    height: 70px;
+  }
+  
+  .pdf-result {
+    width: 55px;
+    height: 70px;
+  }
+  
+  .pdf-text {
+    font-size: 12px;
+  }
+  
+  .pdf-arrow {
+    width: 24px;
+    height: 24px;
+    font-size: 14px;
+    margin: 0 6px;
   }
 }
 </style>
