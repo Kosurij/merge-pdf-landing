@@ -64,13 +64,13 @@ npm run preview
 
 ## 🚀 Deployment
 
-### GitHub Pages (Automatic)
-The project is automatically deployed to GitHub Pages via GitHub Actions:
+### Vercel (Recommended)
+The project is optimized for Vercel deployment:
 
-1. **Push to main branch** triggers automatic build and deployment
-2. **Site URL**: https://kosurij.github.io/merge-pdf-landing/
-3. **Build artifacts** are stored in `dist/` folder
-4. **SPA routing** is handled with `_redirects` and `404.html`
+1. **Connect your repository** to Vercel
+2. **Automatic deployments** on every push to main branch
+3. **Preview deployments** for pull requests
+4. **Global CDN** for fast loading worldwide
 
 ### Manual Deployment
 ```bash
@@ -79,12 +79,6 @@ npm run build
 
 # Deploy dist/ folder to your hosting service
 ```
-
-### GitHub Actions Workflow
-- **File**: `.github/workflows/deploy.yml`
-- **Triggers**: Push to main branch
-- **Steps**: Install → Type check → Lint → Build → Deploy
-- **Environment**: GitHub Pages
 
 ## 📁 Project Structure
 
@@ -202,4 +196,3 @@ MIT License
 
 For questions and suggestions:
 - Email: support@mergepdf.com
-- GitHub Issues: [Create issue](https://github.com/your-repo/issues)
