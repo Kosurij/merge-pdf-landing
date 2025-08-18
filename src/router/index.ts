@@ -21,6 +21,7 @@ const router = createRouter({
       name: 'FAQ',
       component: FaqPage,
     },
+    { path: '/:pathMatch(.*)*', redirect: '/' }
   ],
 })
 
