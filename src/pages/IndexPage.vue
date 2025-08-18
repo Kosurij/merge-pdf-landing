@@ -350,17 +350,6 @@ const scrollToHowItWorks = () => {
   pointer-events: none;
 }
 
-.pdf-page:hover {
-  transform: translateY(-8px) scale(1.05) rotateY(5deg) rotateX(5deg);
-  box-shadow:
-    0 15px 35px var(--pdf-page-shadow-hover),
-    0 8px 20px var(--pdf-page-shadow-secondary-hover),
-    0 4px 12px rgba(0, 0, 0, 0.3),
-    inset 0 1px 0 rgba(255, 255, 255, 0.15),
-    0 0 30px rgba(255, 59, 48, 0.4);
-  animation-play-state: paused;
-}
-
 .pdf-page--1 {
   transform: rotate(-8deg) translateY(-4px) translateZ(20px);
   z-index: 3;
@@ -432,13 +421,6 @@ const scrollToHowItWorks = () => {
   transition: all 0.3s ease;
 }
 
-.pdf-page:hover .pdf-text {
-  transform: translate(-50%, -50%) translateZ(25px) scale(1.1);
-  text-shadow:
-    0 4px 8px var(--pdf-text-shadow),
-    0 8px 16px rgba(0, 0, 0, 0.4);
-}
-
 .pdf-arrow {
   font-size: 28px;
   color: var(--color-accent);
@@ -471,8 +453,8 @@ const scrollToHowItWorks = () => {
 }
 
 .pdf-result {
-  width: 90px;
-  height: 110px;
+  width: 100px;
+  height: 120px;
   background: linear-gradient(135deg, var(--pdf-result-bg) 0%, var(--pdf-result-bg-secondary) 100%);
   border: 2px solid var(--pdf-result-border);
   border-radius: 12px;
