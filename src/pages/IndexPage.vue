@@ -175,7 +175,7 @@ const scrollToHowItWorks = () => {
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
-  padding: 64px 16px;
+  padding: 64px;
   min-height: 80vh;
   background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-secondary) 100%);
   position: relative;
