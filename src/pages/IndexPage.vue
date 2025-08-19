@@ -8,8 +8,8 @@
           <span class="hero__title-accent">quickly and easily</span>
         </h1>
         <p class="hero__subtitle">
-          Powerful online tool for merging PDF documents.
-          Upload, merge, and download in just a few clicks.
+          Powerful Chrome extension for merging PDF documents.
+          Upload, merge, and download in just a few clicks. 100% private - files never leave your device.
         </p>
         <div class="hero__actions">
           <a href="https://chromewebstore.google.com" target="_blank" rel="noopener" class="btn btn--primary btn--large">

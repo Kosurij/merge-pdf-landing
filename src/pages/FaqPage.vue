@@ -18,56 +18,54 @@ const faqs = [
   {
     title: 'What is Combine PDF?',
     description:
-        'Combine PDF is an online tool for merge multiple PDF files into one document. You can upload files, arrange page order, and download the result with one click.',
+        'Combine PDF is a powerful yet simple Chrome extension that helps you merge PDF files directly in your browser — no internet, no hassle, just instant results.',
   },
   {
-    title: 'Are my files secure?',
-    description:
-        'Yes, absolutely secure! All files are processed locally in your browser and never uploaded to our servers. We have no access to your document content.',
+    title: 'What’s the difference between Quick Merge and Page-to-Page?',
+    description: `
+      <ul>
+        <li>⚡ <strong>Quick Merge</strong> — instantly combines up to <strong>4</strong> full PDF files, with the option to reorder them before merging.</li>
+        <li>📄 <strong>Page-to-Page</strong> — pick and merge <strong>individual pages</strong> from different PDFs. No hard limits — it depends only on your computer’s performance.</li>
+      </ul>
+    `,
   },
   {
-    title: 'What file formats are supported?',
+    title: 'Will my files stay private?',
     description:
-        'Currently, only PDF files are supported. If you have documents in other formats (Word, Excel, PowerPoint), convert them to PDF first.',
+        'Yes! 🔒 Your PDFs never leave your device. Everything happens 100% offline inside your browser, guaranteeing complete privacy and security.',
   },
   {
-    title: 'Are there file size limitations?',
+    title: 'Can I merge large files or only specific pages?',
     description:
-        'File size is limited by your browser capabilities. We recommend using files up to 100 MB for optimal performance.',
+        'Definitely ✅. Work with hundreds of pages in Page-to-Page mode or merge just the specific pages you need. It’s flexible and entirely under your control.',
   },
   {
-    title: 'Can I change page order?',
-    description:
-        'Yes! After uploading files, you can drag and drop pages to rearrange them, remove unwanted pages, and add new files at any time.',
+    title: 'Why use Combine PDF instead of online tools?',
+    description: `
+      <ul>
+        <li>🔒 <strong>Privacy-first</strong> — no uploads, everything stays on your device.</li>
+        <li>⚡ <strong>Fast</strong> — local processing right in Chrome.</li>
+        <li>🖱 <strong>Easy</strong> — drag, drop, and done.</li>
+        <li>🎯 <strong>Flexible</strong> — two modes: Quick Merge and Page-to-Page.</li>
+      </ul>
+    `,
   },
   {
-    title: 'Is original quality preserved?',
+    title: 'How do I get the merged document?',
     description:
-        'Yes, we preserve the original quality of all PDF files. No quality loss or compression occurs.',
+        'As soon as your files are merged, Combine PDF instantly prompts you to download the final document with one click. Quick and effortless!',
   },
   {
-    title: 'Does it work on mobile devices?',
+    title: 'Is it free to use?',
     description:
-        'Yes, Combine PDF is fully responsive and works on all devices: computers, tablets, and smartphones.',
+        'Yes, Combine PDF is free for everyday use. Core features — Quick Merge and Page-to-Page — are fully accessible.',
   },
   {
-    title: 'Do I need to install software?',
+    title: 'Need help?',
     description:
-        'No! Combine PDF works right in your browser. Just open the website and start working. No additional programs or extensions required.',
+        'We’re here for you! Reach out anytime at <a href="mailto:kosurij.dm@gmail.com" class="contact-link">kosurij.dm@gmail.com</a> — we’ll be glad to help.',
   },
-  {
-    title: 'How many files can I merge at once?',
-    description:
-        'You can upload and merge any number of PDF files. Limitations depend only on your browser and device capabilities.',
-  },
-  {
-    title: 'Still have questions?',
-    description:
-        'We\'re always here to help! Email us at <a href="mailto:support@mergepdf.com" class="contact-link">support@mergepdf.com</a> or use the contact form on our website.',
-  }
-]
-
-</script>
+]</script>
 
 <style scoped>
 .faq-page {
@@ -177,5 +175,11 @@ const faqs = [
 
 .contact-link:hover::after {
   transform: scaleX(1);
+}
+
+.faq-wrapper ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 </style>
