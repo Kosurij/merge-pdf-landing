@@ -64,8 +64,8 @@ const faqs = [
     title: 'Need help?',
     description:
         'We’re here for you! Reach out anytime at <a href="mailto:kosurij.dm@gmail.com" class="contact-link">kosurij.dm@gmail.com</a> — we’ll be glad to help.',
-  },
-]</script>
+  }]
+</script>
 
 <style scoped>
 .faq-page {
