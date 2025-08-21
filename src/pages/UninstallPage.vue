@@ -13,7 +13,11 @@
 </template>
 
 <script setup lang="ts">
-// Страница для сбора обратной связи при удалении расширения
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  document.documentElement.setAttribute('data-theme', 'light')
+})
 </script>
 
 <style scoped>
@@ -31,7 +35,6 @@
 .form-container {
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 @media (max-width: 768px) {
