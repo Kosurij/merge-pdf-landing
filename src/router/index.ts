@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import WelcomePage from "@/pages/WelcomePage.vue";
 import FaqPage from "@/pages/FaqPage.vue";
 import IndexPage from "@/pages/IndexPage.vue";
+import UninstallPage from "@/pages/UninstallPage.vue"
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -20,6 +21,11 @@ const router = createRouter({
       path: '/faq',
       name: 'FAQ',
       component: FaqPage,
+    },
+    {
+      path: '/uninstall',
+      name: 'uninstall',
+      component: UninstallPage,
     },
     { path: '/:pathMatch(.*)*', redirect: '/' }
   ],

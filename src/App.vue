@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NavigationBar from '@/components/NavigationBar.vue'
 import { RouterView } from 'vue-router'
-import { watch } from 'vue'
+import { watch, computed } from 'vue'
 import { useRoute } from 'vue-router'
 
 const route = useRoute()
@@ -9,10 +9,13 @@ const route = useRoute()
 const TITLES: Record<string, string> = {
   '/welcome': 'Welcome | Combine PDF',
   '/faq': 'FAQ | Combine PDF',
+  '/uninstall': 'Uninstall | Combine PDF',
   '/': 'Combine PDF - Merge PDF Files Online',
 }
 
 const getTitleFromPath = (path: string): string => TITLES[path] || 'Combine PDF'
+
+const showNavigation = computed(() => route.path !== '/uninstall')
 
 watch(
     () => route.path,
@@ -25,7 +28,7 @@ watch(
 
 <template>
   <div class="layout">
-    <NavigationBar />
+    <NavigationBar v-if="showNavigation" />
     <RouterView />
   </div>
 </template>
