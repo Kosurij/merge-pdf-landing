@@ -12,7 +12,7 @@
           Upload, merge, and download in just a few clicks. 100% private - files never leave your device.
         </p>
         <div class="hero__actions">
-          <a href="https://chromewebstore.google.com" target="_blank" rel="noopener" class="btn btn--primary btn--large">
+          <a href="https://chromewebstore.google.com/detail/combine-pdf/onffhmkpneimffpbjfeedikfielemlcb" target="_blank" rel="noopener" class="btn btn--primary btn--large">
             <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
               <polyline points="7,10 12,15 17,10"/>
@@ -138,7 +138,7 @@
           <p class="cta__description">
             Start combining your PDF files today
           </p>
-          <a href="https://chromewebstore.google.com" target="_blank" rel="noopener" class="btn btn--primary btn--large">
+          <a href="https://chromewebstore.google.com/detail/combine-pdf/onffhmkpneimffpbjfeedikfielemlcb" target="_blank" rel="noopener" class="btn btn--primary btn--large">
             Get Started
           </a>
         </div>
