@@ -1,5 +1,14 @@
 <template>
   <div class="welcome-page">
+    <!-- Простая подпись к пазлу -->
+    <div class="puzzle-hint">
+      <span class="hint-text">
+       <PuzzleIcon alt="Puzzle icon" class="puzzle-icon" />
+        Click the puzzle icon
+      </span>
+      <div class="arrow-up"></div>
+    </div>
+
     <header class="welcome-header">
       <h1 class="title">🎉 Welcome to Combine PDF</h1>
       <p class="subtitle">
@@ -50,6 +59,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useConfetti } from '@/composables/useConfetti'
+import PuzzleIcon from '/src/assets/puzzle.svg'
 
 const { launchConfetti } = useConfetti()
 
@@ -64,6 +74,103 @@ onMounted(launchConfetti)
   padding: 32px 16px 120px 32px;
   color: var(--color-text-primary);
   background: var(--color-background);
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0) rotate(-20deg);
+  }
+  40% {
+    transform: translateY(-5px) rotate(-20deg);
+  }
+  60% {
+    transform: translateY(-2px) rotate(-20deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
+
+/* === Простая подпись к пазлу === */
+.puzzle-hint {
+  position: fixed;
+  top: 15px;
+  right: 25px;
+  z-index: 1000;
+  background: #3b82f6;
+  color: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  animation: fadeIn 0.5s ease-out, bounceUpDown 1.5s ease-in-out infinite;
+}
+
+.hint-text {
+  font-size: 16px;
+  font-weight: 700;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.puzzle-icon {
+  width: 18px;
+  height: 18px;
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
+}
+
+.arrow-up {
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #3b82f6;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceUpDown {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .puzzle-hint {
+    top: 10px;
+    right: 15px;
+    padding: 14px 18px;
+  }
+  
+  .hint-text {
+    font-size: 15px;
+  }
 }
 
 .welcome-header {
@@ -120,12 +227,6 @@ onMounted(launchConfetti)
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-sm);
   transition: all 0.3s ease;
-}
-
-.step-row:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
-  border-color: var(--color-accent);
 }
 
 /* === Visual Elements === */
