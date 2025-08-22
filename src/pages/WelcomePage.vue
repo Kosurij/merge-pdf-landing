@@ -1,10 +1,13 @@
 <template>
   <div class="welcome-page">
-    <img
-      src="@/assets/arrow.svg"
-      alt="Arrow pointing to Chrome's puzzle icon"
-      class="puzzle-arrow"
-    />
+    <div class="puzzle-tip">
+      <img
+        :src="puzzleArrow"
+        alt="Arrow pointing to Chrome's puzzle icon"
+        class="puzzle-arrow"
+      />
+      <div class="puzzle-caption">Click the puzzle icon</div>
+    </div>
     <header class="welcome-header">
       <h1 class="title">🎉 Welcome to Combine PDF</h1>
       <p class="subtitle">
@@ -55,6 +58,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useConfetti } from '@/composables/useConfetti'
+import puzzleArrow from '@/assets/arrow.svg'
 
 const { launchConfetti } = useConfetti()
 
@@ -62,25 +66,43 @@ onMounted(launchConfetti)
 </script>
 
 <style scoped>
-.puzzle-arrow {
+
+.puzzle-tip {
   position: fixed;
   top: 0;
   right: 0;
+  transform: translate(-100%, 50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.puzzle-arrow {
   width: 64px;
   height: 64px;
-  pointer-events: none;
-  transform: translate(-100%, 50%) rotate(-135deg);
+  transform: rotate(-135deg);
   animation: puzzle-arrow-bounce 1.5s infinite ease-in-out;
-  z-index: 1000;
+}
+
+.puzzle-caption {
+  margin-top: 4px;
+  padding: 2px 6px;
+  font-size: 14px;
+  background: var(--color-background-secondary);
+  color: var(--color-text-primary);
+  border-radius: 4px;
+  box-shadow: var(--shadow-sm);
 }
 
 @keyframes puzzle-arrow-bounce {
   0%,
   100% {
-    transform: translate(-100%, 50%) rotate(-135deg);
+    transform: translate(0, 0) rotate(-135deg);
   }
   50% {
-    transform: translate(-110%, 60%) rotate(-135deg);
+    transform: translate(-10px, 10px) rotate(-135deg);
   }
 }
 
