@@ -1,5 +1,10 @@
 <template>
   <div class="welcome-page">
+    <img
+      src="@/assets/arrow.svg"
+      alt="Arrow pointing to Chrome's puzzle icon"
+      class="puzzle-arrow"
+    />
     <header class="welcome-header">
       <h1 class="title">🎉 Welcome to Combine PDF</h1>
       <p class="subtitle">
@@ -57,6 +62,28 @@ onMounted(launchConfetti)
 </script>
 
 <style scoped>
+.puzzle-arrow {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 64px;
+  height: 64px;
+  pointer-events: none;
+  transform: translate(-100%, 50%) rotate(-135deg);
+  animation: puzzle-arrow-bounce 1.5s infinite ease-in-out;
+  z-index: 1000;
+}
+
+@keyframes puzzle-arrow-bounce {
+  0%,
+  100% {
+    transform: translate(-100%, 50%) rotate(-135deg);
+  }
+  50% {
+    transform: translate(-110%, 60%) rotate(-135deg);
+  }
+}
+
 .welcome-page {
   display: flex;
   flex-direction: column;
