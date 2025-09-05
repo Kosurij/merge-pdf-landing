@@ -1,12 +1,22 @@
 <template>
   <div class="welcome-page">
-    <!-- Простая подпись к пазлу -->
+    <!-- Большая заметная подсказка к пазлу -->
     <div class="puzzle-hint">
-      <span class="hint-text">
-       <PuzzleIcon alt="Puzzle icon" class="puzzle-icon" />
-        Click the puzzle icon
-      </span>
-      <div class="arrow-up"></div>
+      <div class="hint-content">
+        <div class="hint-icon-container">
+          <PuzzleIcon alt="Puzzle icon" class="puzzle-icon" />
+        </div>
+        <div class="hint-text-container">
+          <div class="hint-title">Click the puzzle icon</div>
+          <div class="hint-subtitle">in your browser toolbar</div>
+        </div>
+      </div>
+      <div class="big-arrow">
+        <svg width="40" height="80" viewBox="0 0 40 80" fill="none" xmlns="http://www.w3.org/2000/svg" style="transform: rotate(180deg);">
+          <path d="M20 5L20 60" stroke="#3b82f6" stroke-width="6" stroke-linecap="round"/>
+          <path d="M8 50L20 60L32 50" stroke="#3b82f6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
     </div>
 
     <header class="welcome-header">
@@ -99,45 +109,82 @@ onMounted(launchConfetti)
   }
 }
 
-/* === Простая подпись к пазлу === */
+/* === Большая заметная подсказка к пазлу === */
 .puzzle-hint {
   position: fixed;
-  top: 15px;
-  right: 25px;
+  top: 100px;
+  right: 20px;
   z-index: 1000;
-  background: #3b82f6;
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
   color: white;
-  padding: 16px 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
-  animation: fadeIn 0.5s ease-out, bounceUpDown 1.5s ease-in-out infinite;
+  padding: 24px 28px;
+  border-radius: 20px;
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.5), 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.6s ease-out, bounceUpDown 2s ease-in-out infinite 0.6s;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  min-width: 280px;
 }
 
-.hint-text {
-  font-size: 16px;
-  font-weight: 700;
-  white-space: nowrap;
+.hint-content {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.hint-icon-container {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 12px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .puzzle-icon {
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   filter: brightness(0) invert(1);
   flex-shrink: 0;
 }
 
-.arrow-up {
+.hint-text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hint-title {
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hint-subtitle {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.big-arrow {
   position: absolute;
-  top: -8px;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 10px solid #3b82f6;
+  top: -90px;
+  right: 18%;
+  transform: translateX(50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: arrowBounce 2s ease-in-out infinite 0.6s;
+  filter: drop-shadow(0 6px 16px rgba(59, 130, 246, 0.5));
+}
+
+.big-arrow svg {
+  width: 40px;
+  height: 80px;
 }
 
 @keyframes fadeIn {
@@ -156,20 +203,58 @@ onMounted(launchConfetti)
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes arrowBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
   }
 }
 
 /* Адаптивность для мобильных устройств */
 @media (max-width: 768px) {
   .puzzle-hint {
-    top: 10px;
+    top: 80px;
     right: 15px;
-    padding: 14px 18px;
+    padding: 20px 24px;
+    min-width: 240px;
   }
   
-  .hint-text {
-    font-size: 15px;
+  .hint-content {
+    gap: 12px;
+  }
+  
+  .hint-icon-container {
+    padding: 10px;
+  }
+  
+  .puzzle-icon {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .hint-title {
+    font-size: 16px;
+  }
+  
+  .hint-subtitle {
+    font-size: 13px;
+  }
+  
+  .big-arrow {
+    top: -70px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  
+  .big-arrow svg {
+    width: 36px;
+    height: 70px;
   }
 }
 
