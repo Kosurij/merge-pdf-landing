@@ -240,7 +240,7 @@ onMounted(launchConfetti)
 /* Step Images */
 .step-image-container {
   width: 100%;
-  max-width: 500px;
+  max-width: 800px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
@@ -253,11 +253,8 @@ onMounted(launchConfetti)
 .step-image {
   width: 100%;
   height: auto;
-  max-height: 400px;
+  max-height: 700px;
 }
-
-
-
 
 
 /* === Text === */
@@ -290,18 +287,35 @@ onMounted(launchConfetti)
   }
 
   .step-row-visual {
-    width: 45%;
+    width: 60%;
     min-height: 250px;
   }
 
   .step-row-text {
-    width: 55%;
+    width: 40%;
     text-align: left;
   }
 }
 
 /* === Large screens === */
 @media (min-width: 1280px) {
+  .step-row-visual {
+    width: 65%;
+    min-height: 300px;
+  }
+
+  .step-row-text {
+    width: 35%;
+  }
+
+  .step-image-container {
+    max-width: 900px;
+  }
+
+  .step-image {
+    max-height: 800px;
+  }
+
   .step-row-text h2 {
     font-size: 28px;
   }
