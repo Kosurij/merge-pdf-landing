@@ -173,7 +173,7 @@ onMounted(launchConfetti)
 .big-arrow {
   position: absolute;
   top: -90px;
-  right: 18%;
+  right: 25%;
   transform: translateX(50%);
   display: flex;
   align-items: center;
@@ -209,10 +209,10 @@ onMounted(launchConfetti)
 
 @keyframes arrowBounce {
   0%, 100% {
-    transform: translateY(0);
+    transform: translateX(50%) translateY(0);
   }
   50% {
-    transform: translateY(-6px);
+    transform: translateX(50%) translateY(-6px);
   }
 }
 
