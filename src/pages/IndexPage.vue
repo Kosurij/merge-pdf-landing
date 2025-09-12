@@ -49,9 +49,9 @@
     </section>
 
     <!-- Features Section -->
-    <section class="features">
+    <section id="features" class="features">
       <div class="container">
-        <h2 class="section-title">Why choose us</h2>
+        <h2 class="section-title">Features</h2>
         <div class="features__grid">
           <div class="feature-card">
             <div class="feature-card__icon">
@@ -59,9 +59,9 @@
                 <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
               </svg>
             </div>
-            <h3 class="feature-card__title">Fast & Simple</h3>
+            <h3 class="feature-card__title">Fast</h3>
             <p class="feature-card__description">
-              Combine PDF files in seconds with our optimized algorithm and intuitive interface - no complex settings required
+              Combine PDF files in seconds with our optimized algorithm and intuitive interface
             </p>
           </div>
 
@@ -71,9 +71,9 @@
                 <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
               </svg>
             </div>
-            <h3 class="feature-card__title">Secure</h3>
+            <h3 class="feature-card__title">Private</h3>
             <p class="feature-card__description">
-              Your files are processed locally in the browser and never uploaded to our servers
+              Your data never leaves your device - all operations are performed locally
             </p>
           </div>
 
@@ -83,9 +83,39 @@
                 <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
               </svg>
             </div>
-            <h3 class="feature-card__title">Quality</h3>
+            <h3 class="feature-card__title">Works offline</h3>
             <p class="feature-card__description">
-              Preserve original PDF quality without any data loss
+              No internet connection required - all operations are performed in the browser
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14,2 14,8 20,8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10,9 9,9 8,9"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Two merge modes</h3>
+            <p class="feature-card__description">
+              By files and page-to-page - sort and delete pages as needed
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                <line x1="12" y1="22.08" x2="12" y2="12"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Right from browser</h3>
+            <p class="feature-card__description">
+              Works as a Chrome extension - always at hand, no need to install separate programs
             </p>
           </div>
         </div>
@@ -130,6 +160,31 @@
       </div>
     </section>
 
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="faq-content">
+          <AccordionGroup :items="faqs" />
+        </div>
+        
+        <!-- Contact Support Block -->
+        <div class="contact-support">
+          <h3 class="contact-support__title">Still have a question?</h3>
+          <p class="contact-support__description">
+            Can't find the answer you're looking for? We're here to help!
+          </p>
+          <a href="mailto:kosurij.dm@gmail.com" class="contact-support__button">
+            <svg class="contact-support__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+              <polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Contact support team
+          </a>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="cta">
       <div class="container">
@@ -144,16 +199,99 @@
         </div>
       </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__left">
+            <div class="footer__logo">
+              <div class="footer__logo-icon"></div>
+              <span class="footer__logo-text">Combine PDF</span>
+            </div>
+            <p class="footer__description">
+              Powerful Chrome extension for merging PDF documents.
+            </p>
+          </div>
+          <div class="footer__right">
+            <div class="footer__links">
+              <a href="#privacy-policy" class="footer__link" @click="scrollToSection('privacy-policy')">Privacy Policy</a>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p class="footer__copyright">
+            © 2025 Combine PDF. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
   </main>
 </template>
 
 <script setup lang="ts">
+import AccordionGroup from '@/components/AccordionGroup.vue'
+
 const scrollToHowItWorks = () => {
   const element = document.getElementById('how-it-works')
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' })
   }
 }
+
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
+}
+
+const faqs = [
+  {
+    title: 'What is Combine PDF?',
+    description:
+        'Combine PDF is a powerful yet simple Chrome extension that helps you merge PDF files directly in your browser — no internet, no hassle, just instant results.',
+  },
+  {
+    title: 'What\'s the difference between Quick Merge and Page-to-Page?',
+    description: `
+      <ul>
+        <li>⚡ <strong>Quick Merge</strong> — instantly combines up to <strong>4</strong> full PDF files, with the option to reorder them before merging.</li>
+        <li>📄 <strong>Page-to-Page</strong> — pick and merge <strong>individual pages</strong> from different PDFs. No hard limits — it depends only on your computer's performance.</li>
+      </ul>
+    `,
+  },
+  {
+    title: 'Will my files stay private?',
+    description:
+        'Yes! 🔒 Your PDFs never leave your device. Everything happens 100% offline inside your browser, guaranteeing complete privacy and security.',
+  },
+  {
+    title: 'Can I merge large files or only specific pages?',
+    description:
+        'Definitely ✅. Work with hundreds of pages in Page-to-Page mode or merge just the specific pages you need. It\'s flexible and entirely under your control.',
+  },
+  {
+    title: 'Why use Combine PDF instead of online tools?',
+    description: `
+      <ul>
+        <li>🔒 <strong>Privacy-first</strong> — no uploads, everything stays on your device.</li>
+        <li>⚡ <strong>Fast</strong> — local processing right in Chrome.</li>
+        <li>🖱 <strong>Easy</strong> — drag, drop, and done.</li>
+        <li>🎯 <strong>Flexible</strong> — two modes: Quick Merge and Page-to-Page.</li>
+      </ul>
+    `,
+  },
+  {
+    title: 'How do I get the merged document?',
+    description:
+        'As soon as your files are merged, Combine PDF instantly prompts you to download the final document with one click. Quick and effortless!',
+  },
+  {
+    title: 'Is it free to use?',
+    description:
+        'Yes, Combine PDF is free for everyday use. Core features — Quick Merge and Page-to-Page — are fully accessible.',
+  }]
 </script>
 
 <style scoped>
@@ -177,7 +315,6 @@ const scrollToHowItWorks = () => {
   min-height: 80vh;
   background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-secondary) 100%);
   position: relative;
-  margin-bottom: 16px;
 }
 
 .hero::after {
@@ -575,7 +712,6 @@ const scrollToHowItWorks = () => {
   padding: 64px 0;
   background: var(--color-background);
   position: relative;
-  margin-top: 16px;
 }
 
 .features::after {
@@ -651,13 +787,13 @@ const scrollToHowItWorks = () => {
   padding: 64px 0;
   background: var(--color-background-secondary);
   border-bottom: 1px solid var(--color-border);
-  margin-top: 16px;
 }
 
 .steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 32px;
+  width: 100%;
 }
 
 .step {
@@ -693,13 +829,75 @@ const scrollToHowItWorks = () => {
   line-height: 1.6;
 }
 
+/* FAQ Section */
+.faq {
+  padding: 64px 0;
+  background: var(--color-background-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.faq-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Contact Support Block */
+.contact-support {
+  max-width: 600px;
+  margin: 24px auto 0;
+  text-align: center;
+  padding: 0;
+}
+
+.contact-support__title {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 16px;
+}
+
+.contact-support__description {
+  font-size: 16px;
+  color: var(--color-text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.contact-support__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 32px;
+  background: var(--color-background);
+  color: var(--color-text-primary);
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.2s ease;
+  border: 2px solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-support__button:hover {
+  background: var(--color-background-secondary);
+  border-color: var(--color-accent);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-support__icon {
+  width: 20px;
+  height: 20px;
+  color: var(--color-text-primary);
+}
+
 /* CTA Section */
 .cta {
   padding: 64px 0;
   background: var(--color-background);
   color: var(--color-text-primary);
   position: relative;
-  margin-top: 16px;
 }
 
 .cta::before {
@@ -872,5 +1070,150 @@ const scrollToHowItWorks = () => {
   .pdf-page--1 { --pdf-rotation: -5deg; --pdf-z: 12px; }
   .pdf-page--2 { --pdf-rotation: 2deg; --pdf-z: 6px; }
   .pdf-page--3 { --pdf-rotation: -3deg; --pdf-z: 3px; }
+}
+
+/* Footer */
+.footer {
+  background: var(--color-background-secondary);
+  border-top: 1px solid var(--color-border);
+  padding: 48px 0 24px;
+}
+
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 32px;
+}
+
+.footer__left {
+  flex: 1;
+  max-width: 400px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.footer__logo-icon {
+  width: 32px;
+  height: 32px;
+  background-image: url('@/assets/logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.footer__logo-text {
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--color-text-primary);
+}
+
+.footer__description {
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.footer__right {
+  display: flex;
+  align-items: flex-start;
+}
+
+.footer__links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__link {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer__link:hover {
+  color: var(--color-accent);
+}
+
+.footer__bottom {
+  border-top: 1px solid var(--color-border);
+  padding-top: 24px;
+  text-align: center;
+}
+
+.footer__copyright {
+  color: var(--color-text-secondary);
+  margin: 0;
+  font-size: 14px;
+}
+
+/* Contact link styles */
+.contact-link {
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-decoration: none;
+  transition: opacity 0.2s ease-in-out;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.contact-link:hover {
+  opacity: 0.85;
+}
+
+.contact-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: var(--color-accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease-in-out;
+}
+
+.contact-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* FAQ wrapper ul styles */
+.faq-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer__content {
+    flex-direction: column;
+    gap: 24px;
+  }
+  
+  .footer__right {
+    align-self: flex-start;
+  }
+  
+  .footer__logo-text {
+    font-size: 18px;
+  }
+  
+  .footer__description {
+    font-size: 14px;
+  }
 }
 </style>

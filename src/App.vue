@@ -8,7 +8,6 @@ const route = useRoute()
 
 const TITLES: Record<string, string> = {
   '/welcome': 'Welcome | Combine PDF',
-  '/faq': 'FAQ | Combine PDF',
   '/uninstall': 'Uninstall | Combine PDF',
   '/': 'Combine PDF - Merge PDF Files Online',
 }

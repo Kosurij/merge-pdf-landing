@@ -1,7 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import WelcomePage from "@/pages/WelcomePage.vue";
-import FaqPage from "@/pages/FaqPage.vue";
 import IndexPage from "@/pages/IndexPage.vue";
+import WelcomePage from "@/pages/WelcomePage.vue";
 import UninstallPage from "@/pages/UninstallPage.vue"
 
 const router = createRouter({
@@ -16,11 +15,6 @@ const router = createRouter({
       path: '/welcome',
       name: 'welcome',
       component: WelcomePage,
-    },
-    {
-      path: '/faq',
-      name: 'FAQ',
-      component: FaqPage,
     },
     {
       path: '/uninstall',
