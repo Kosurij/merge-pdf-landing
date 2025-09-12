@@ -12,17 +12,14 @@
           Upload, merge, and download in just a few clicks. 100% private - files never leave your device.
         </p>
         <div class="hero__actions">
-          <a href="https://chromewebstore.google.com/detail/combine-pdf/onffhmkpneimffpbjfeedikfielemlcb?hl=en" target="_blank" rel="noopener" class="btn btn--primary btn--large">
+          <a href="https://chromewebstore.google.com/detail/combine-pdf/onffhmkpneimffpbjfeedikfielemlcb?hl=en" target="_blank" rel="noopener" class="btn btn--primary btn--hero">
             <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
               <polyline points="7,10 12,15 17,10"/>
               <line x1="12" y1="15" x2="12" y2="3"/>
             </svg>
-            Install Extension
+            Install Combine PDF
           </a>
-          <button class="btn btn--secondary btn--large" @click="scrollToHowItWorks">
-            How it works
-          </button>
         </div>
       </div>
       <div class="hero__visual">
@@ -208,8 +205,8 @@
           <p class="cta__description">
             Start combining your PDF files today
           </p>
-          <a href="https://chromewebstore.google.com/detail/combine-pdf/onffhmkpneimffpbjfeedikfielemlcb?hl=en" target="_blank" rel="noopener" class="btn btn--primary btn--large">
-            Get Started
+          <a href="https://chromewebstore.google.com/detail/combine-pdf/onffhmkpneimffpbjfeedikfielemlcb?hl=en" target="_blank" rel="noopener" class="btn btn--primary btn--large btn--wide">
+            Install Combine PDF
           </a>
         </div>
       </div>
@@ -248,12 +245,6 @@
 import AccordionGroup from '@/components/AccordionGroup.vue'
 import { RouterLink } from 'vue-router'
 
-const scrollToHowItWorks = () => {
-  const element = document.getElementById('how-it-works')
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
-}
 
 const faqs = [
   {
@@ -691,7 +682,6 @@ const faqs = [
 
 .btn--primary:hover {
   background: var(--color-button-primary-hover);
-  transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
 }
 
@@ -703,12 +693,35 @@ const faqs = [
 
 .btn--secondary:hover {
   background: var(--color-button-secondary-hover);
-  transform: translateY(-2px);
 }
 
 .btn--large {
   padding: 20px 32px;
   font-size: 18px;
+}
+
+.btn--wide {
+  min-width: 280px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.btn--hero {
+  padding: 24px 48px;
+  font-size: 20px;
+  font-weight: 700;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(59, 130, 246, 0.3), 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.btn--hero:hover {
+  box-shadow: 0 12px 35px rgba(59, 130, 246, 0.4), 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.btn--hero .btn__icon {
+  width: 24px;
+  height: 24px;
 }
 
 .btn__icon {
@@ -894,7 +907,6 @@ const faqs = [
 .contact-support__button:hover {
   background: var(--color-background-secondary);
   border-color: var(--color-accent);
-  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
