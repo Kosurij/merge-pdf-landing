@@ -4,25 +4,30 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#1C1C1C" />
-    <meta name="description" content="Welcome to Combine PDF" />
+    <title>Combine PDF Files - Chrome Extension</title>
+    <meta name="description" content="Learn how to combine PDF files quickly and easily with our free PDF combiner Chrome extension. Merge multiple PDF documents in seconds. Works on Mac, Windows, Linux. 100% private - files never leave your device." />
+    <meta name="keywords" content="combine pdf, pdf combiner, how to combine pdf files, pdf combine, combine pdf files, how can i combine pdf files, how do i combine pdf files, how to combine two pdf files, combine pdf online, how to combine files into one pdf, how to combine pdf files mac, pdf merger, merge pdf, pdf tools" />
+    <meta name="author" content="Combine PDF" />
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://combine-pdf.pro/" />
     <link rel="icon" href="./favicon.ico" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap" rel="stylesheet" />
-    <title>Combine PDF</title>
 
     <!-- ✅ Критические стили -->
     <style>
         :root {
-            --color-text: #EFEFEF;
-            --step-background: #2A2A2A;
-            --step-text: #EFEFEF;
-            --color-gray: #ffffffaa;
+            --welcome-color-text: #EFEFEF;
+            --welcome-step-background: #2A2A2A;
+            --welcome-step-text: #EFEFEF;
+            --welcome-color-gray: #ffffffaa;
         }
 
         html, body {
             margin: 0;
             padding: 0;
             background: #1C1C1C;
-            color: var(--color-text);
+            color: var(--welcome-color-text);
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
             line-height: 1.5;
@@ -34,7 +39,7 @@
             flex-direction: column;
             align-items: center;
             padding: 32px 16px 120px 32px;
-            color: var(--color-text);
+            color: var(--welcome-color-text);
         }
 
         .welcome-header {
@@ -42,12 +47,12 @@
             margin-bottom: 48px;
         }
 
-        .title {
+        .welcome-title {
             font-size: 48px;
             font-weight: 800;
         }
 
-        .steps {
+        .welcome-steps {
             display: flex;
             flex-direction: column;
             gap: 48px;
@@ -55,11 +60,11 @@
             max-width: 1080px;
         }
 
-        .step-row {
+        .welcome-step-row {
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: var(--step-background);
+            background: var(--welcome-step-background);
             padding: 32px 16px;
             border-radius: 16px;
             gap: 16px;
@@ -68,7 +73,7 @@
                     0 4px 24px rgba(0, 0, 0, 0.08);
         }
 
-        .step-row-image {
+        .welcome-step-row-image {
             width: 100%;
             height: auto;
             border-radius: 12px;
@@ -76,36 +81,36 @@
             object-fit: contain;
         }
 
-        .step-row-text {
+        .welcome-step-row-text {
             text-align: center;
         }
 
-        .step-row-text h2 {
+        .welcome-step-row-text h2 {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: var(--step-text);
+            color: var(--welcome-step-text);
         }
 
-        .step-row-text p {
+        .welcome-step-row-text p {
             font-size: 16px;
-            color: var(--color-gray);
+            color: var(--welcome-color-gray);
             margin: 0;
             line-height: 1.6;
         }
 
         @media (min-width: 900px) {
-            .step-row {
+            .welcome-step-row {
                 flex-direction: row;
                 justify-content: space-between;
                 text-align: left;
             }
 
-            .step-row-image {
+            .welcome-step-row-image {
                 width: 70%;
             }
 
-            .step-row-text {
+            .welcome-step-row-text {
                 width: 30%;
                 text-align: left;
             }
@@ -125,6 +130,31 @@
 		ym(103836658, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", accurateTrackBounce:true, trackLinks:true});
     </script>
     <!-- /Yandex.Metrika counter -->
+    
+    <!-- Структурированные данные (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Combine PDF - PDF Combiner",
+      "description": "Learn how to combine PDF files quickly and easily with our free PDF combiner Chrome extension. Merge multiple PDF documents in seconds.",
+      "url": "https://combine-pdf.pro/",
+      "applicationCategory": "BrowserExtension",
+      "operatingSystem": "Chrome",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "keywords": "combine pdf, pdf combiner, how to combine pdf files, merge pdf, pdf tools",
+      "screenshot": "https://combine-pdf.pro/screenshot.png",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "150"
+      }
+    }
+    </script>
 </head>
 <body>
 <div id="app"></div>

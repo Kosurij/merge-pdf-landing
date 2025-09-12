@@ -113,16 +113,16 @@ h3 {
   animation: slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1);
 }
 
-.AccordionContentText {
-  padding: 20px;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--color-text-secondary);
-  background-color: var(--color-background);
-  border-top: 1px solid var(--color-border);
-  letter-spacing: 0.01em;
-  line-height: 1.6;
-}
+  .AccordionContentText {
+    padding: 20px;
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    background-color: var(--color-background);
+    border-top: 1px solid var(--color-border);
+    letter-spacing: 0.01em;
+    line-height: 1.6;
+  }
 
 .AccordionChevron {
   width: 18px;

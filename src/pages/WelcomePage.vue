@@ -20,24 +20,24 @@
     </div>
 
     <header class="welcome-header">
-      <h1 class="title">🎉 Welcome to Combine PDF</h1>
-      <p class="subtitle">
+      <h1 class="welcome-title">🎉 Welcome to Combine PDF</h1>
+      <p class="welcome-subtitle">
         Your extension has been installed successfully! Follow these steps to get started.
       </p>
     </header>
 
-    <main class="steps">
-      <section class="step-row">
-        <div class="step-row-visual">
-          <div class="step-image-container">
+    <main class="welcome-steps">
+      <section class="welcome-step-row">
+        <div class="welcome-step-row-visual">
+          <div class="welcome-step-image-container">
             <img 
               src="@/assets/first_step.webp" 
               alt="Pin the extension to browser toolbar" 
-              class="step-image"
+              class="welcome-step-image"
             />
           </div>
         </div>
-        <div class="step-row-text">
+        <div class="welcome-step-row-text">
           <h2>📌 Pin the Extension</h2>
           <p>
             Click the puzzle icon in your browser toolbar, then pin <strong>Combine PDF</strong> to keep it visible and easily accessible.
@@ -45,17 +45,17 @@
         </div>
       </section>
 
-      <section class="step-row">
-        <div class="step-row-visual">
-          <div class="step-image-container">
+      <section class="welcome-step-row">
+        <div class="welcome-step-row-visual">
+          <div class="welcome-step-image-container">
             <img 
               src="@/assets/second_step.webp" 
               alt="Start using the extension" 
-              class="step-image"
+              class="welcome-step-image"
             />
           </div>
         </div>
-        <div class="step-row-text">
+        <div class="welcome-step-row-text">
           <h2>▶️ Start Using</h2>
           <p>
             Click the <strong>Combine PDF</strong> icon in your toolbar to start merging your first PDF files.
@@ -73,7 +73,24 @@ import PuzzleIcon from '/src/assets/puzzle.svg'
 
 const { launchConfetti } = useConfetti()
 
-onMounted(launchConfetti)
+onMounted(() => {
+  launchConfetti()
+  
+  // Добавляем мета-теги для предотвращения индексации
+  document.title = 'Welcome - Combine PDF'
+  
+  // Удаляем существующий robots meta если есть
+  const existingRobots = document.querySelector('meta[name="robots"]')
+  if (existingRobots) {
+    existingRobots.remove()
+  }
+  
+  // Добавляем noindex
+  const robotsMeta = document.createElement('meta')
+  robotsMeta.name = 'robots'
+  robotsMeta.content = 'noindex, nofollow'
+  document.head.appendChild(robotsMeta)
+})
 </script>
 
 <style scoped>
@@ -264,7 +281,7 @@ onMounted(launchConfetti)
   max-width: 800px;
 }
 
-.title {
+.welcome-title {
   font-size: 48px;
   font-weight: 800;
   color: var(--color-text-primary);
@@ -274,7 +291,7 @@ onMounted(launchConfetti)
   margin-bottom: 16px;
 }
 
-.subtitle {
+.welcome-subtitle {
   font-size: 20px;
   color: var(--color-text-secondary);
   line-height: 1.5;
@@ -282,16 +299,16 @@ onMounted(launchConfetti)
 }
 
 @media (max-width: 768px) {
-  .title {
+  .welcome-title {
     font-size: 28px;
   }
   
-  .subtitle {
+  .welcome-subtitle {
     font-size: 16px;
   }
 }
 
-.steps {
+.welcome-steps {
   display: flex;
   flex-direction: column;
   gap: 48px;
@@ -300,7 +317,7 @@ onMounted(launchConfetti)
 }
 
 /* === Step Row Layout === */
-.step-row {
+.welcome-step-row {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -315,7 +332,7 @@ onMounted(launchConfetti)
 }
 
 /* === Visual Elements === */
-.step-row-visual {
+.welcome-step-row-visual {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -323,7 +340,7 @@ onMounted(launchConfetti)
 }
 
 /* Step Images */
-.step-image-container {
+.welcome-step-image-container {
   width: 100%;
   max-width: 800px;
   border-radius: 12px;
@@ -335,7 +352,7 @@ onMounted(launchConfetti)
   align-items: center;
 }
 
-.step-image {
+.welcome-step-image {
   width: 100%;
   height: auto;
   max-height: 700px;
@@ -343,19 +360,19 @@ onMounted(launchConfetti)
 
 
 /* === Text === */
-.step-row-text {
+.welcome-step-row-text {
   text-align: center;
   max-width: 640px;
 }
 
-.step-row-text h2 {
+.welcome-step-row-text h2 {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 16px;
   color: var(--color-text-primary);
 }
 
-.step-row-text p {
+.welcome-step-row-text p {
   font-size: 16px;
   color: var(--color-text-secondary);
   margin: 0;
@@ -364,19 +381,19 @@ onMounted(launchConfetti)
 
 /* === Desktop Layout === */
 @media (min-width: 768px) {
-  .step-row {
+  .welcome-step-row {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 48px;
   }
 
-  .step-row-visual {
+  .welcome-step-row-visual {
     width: 60%;
     min-height: 250px;
   }
 
-  .step-row-text {
+  .welcome-step-row-text {
     width: 40%;
     text-align: left;
   }
@@ -384,28 +401,28 @@ onMounted(launchConfetti)
 
 /* === Large screens === */
 @media (min-width: 1280px) {
-  .step-row-visual {
+  .welcome-step-row-visual {
     width: 65%;
     min-height: 300px;
   }
 
-  .step-row-text {
+  .welcome-step-row-text {
     width: 35%;
   }
 
-  .step-image-container {
+  .welcome-step-image-container {
     max-width: 900px;
   }
 
-  .step-image {
+  .welcome-step-image {
     max-height: 800px;
   }
 
-  .step-row-text h2 {
+  .welcome-step-row-text h2 {
     font-size: 28px;
   }
 
-  .step-row-text p {
+  .welcome-step-row-text p {
     font-size: 18px;
   }
 }

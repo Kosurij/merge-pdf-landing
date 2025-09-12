@@ -9,9 +9,9 @@
       </RouterLink>
 
       <nav class="desktop-nav">
-        <RouterLink to="/" class="nav-link">Home</RouterLink>
-        <RouterLink to="/welcome" class="nav-link">Welcome</RouterLink>
-        <RouterLink to="/faq" class="nav-link">FAQ</RouterLink>
+        <a href="#features" class="nav-link" @click="scrollToSection('features')">Features</a>
+        <a href="#how-it-works" class="nav-link" @click="scrollToSection('how-it-works')">How it works</a>
+        <a href="#faq" class="nav-link" @click="scrollToSection('faq')">FAQ</a>
       </nav>
     </div>
 
@@ -53,9 +53,9 @@
 
     <transition name="fade">
       <div v-if="isMenuOpen" class="mobile-menu">
-        <RouterLink to="/" class="mobile-link" @click="isMenuOpen = false">Home</RouterLink>
-        <RouterLink to="/welcome" class="mobile-link" @click="isMenuOpen = false">Welcome</RouterLink>
-        <RouterLink to="/faq" class="mobile-link" @click="isMenuOpen = false">FAQ</RouterLink>
+        <a href="#features" class="mobile-link" @click="scrollToSection('features'); isMenuOpen = false">Features</a>
+        <a href="#how-it-works" class="mobile-link" @click="scrollToSection('how-it-works'); isMenuOpen = false">How it works</a>
+        <a href="#faq" class="mobile-link" @click="scrollToSection('faq'); isMenuOpen = false">FAQ</a>
       </div>
     </transition>
   </header>
@@ -74,6 +74,13 @@ const toggleTheme = () => {
   currentTheme.value = newTheme
   document.documentElement.setAttribute('data-theme', newTheme)
   localStorage.setItem('theme', newTheme)
+}
+
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
+  }
 }
 
 const handleScroll = () => {
