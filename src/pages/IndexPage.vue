@@ -685,16 +685,6 @@ const faqs = [
   box-shadow: var(--shadow-lg);
 }
 
-.btn--secondary {
-  background: var(--color-button-secondary);
-  color: var(--color-button-primary);
-  border-color: var(--color-button-primary);
-}
-
-.btn--secondary:hover {
-  background: var(--color-button-secondary-hover);
-}
-
 .btn--large {
   padding: 20px 32px;
   font-size: 18px;
@@ -901,7 +891,7 @@ const faqs = [
   font-size: 16px;
   transition: all 0.2s ease;
   border: 2px solid var(--color-border);
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-md);
 }
 
 .contact-support__button:hover {
@@ -1176,42 +1166,6 @@ const faqs = [
   color: var(--color-text-secondary);
   margin: 0;
   font-size: 14px;
-}
-
-/* Contact link styles */
-.contact-link {
-  position: relative;
-  display: inline-block;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: transparent;
-  text-decoration: none;
-  transition: opacity 0.2s ease-in-out;
-  white-space: nowrap;
-  font-weight: 600;
-}
-
-.contact-link:hover {
-  opacity: 0.85;
-}
-
-.contact-link::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.2s ease-in-out;
-}
-
-.contact-link:hover::after {
-  transform: scaleX(1);
 }
 
 /* FAQ wrapper ul styles */
