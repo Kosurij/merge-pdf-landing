@@ -12,7 +12,7 @@
           Upload, merge, and download in just a few clicks. 100% private - files never leave your device.
         </p>
         <div class="hero__actions">
-          <a href="https://chromewebstore.google.com/detail/combine-pdf/onffhmkpneimffpbjfeedikfielemlcb" target="_blank" rel="noopener" class="btn btn--primary btn--large">
+          <a href="https://chromewebstore.google.com/detail/combine-pdf/onffhmkpneimffpbjfeedikfielemlcb?hl=en" target="_blank" rel="noopener" class="btn btn--primary btn--large">
             <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
               <polyline points="7,10 12,15 17,10"/>
@@ -101,7 +101,7 @@
             </div>
             <h3 class="feature-card__title">Two merge modes</h3>
             <p class="feature-card__description">
-              By files and page-to-page - sort and delete pages as needed
+              By files and page-to-page - reorder, sort and delete pages as needed
             </p>
           </div>
 
@@ -116,6 +116,21 @@
             <h3 class="feature-card__title">Right from browser</h3>
             <p class="feature-card__description">
               Works as a Chrome extension - always at hand, no need to install separate programs
+            </p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 6h18l-2 13H5L3 6z"/>
+                <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                <line x1="10" y1="11" x2="10" y2="17"/>
+                <line x1="14" y1="11" x2="14" y2="17"/>
+              </svg>
+            </div>
+            <h3 class="feature-card__title">Easy to use</h3>
+            <p class="feature-card__description">
+              Intuitive drag & drop interface - no technical skills required, just upload and merge
             </p>
           </div>
         </div>
@@ -193,7 +208,7 @@
           <p class="cta__description">
             Start combining your PDF files today
           </p>
-          <a href="https://chromewebstore.google.com/detail/combine-pdf/onffhmkpneimffpbjfeedikfielemlcb" target="_blank" rel="noopener" class="btn btn--primary btn--large">
+          <a href="https://chromewebstore.google.com/detail/combine-pdf/onffhmkpneimffpbjfeedikfielemlcb?hl=en" target="_blank" rel="noopener" class="btn btn--primary btn--large">
             Get Started
           </a>
         </div>
@@ -215,7 +230,7 @@
           </div>
           <div class="footer__right">
             <div class="footer__links">
-              <a href="#privacy-policy" class="footer__link" @click="scrollToSection('privacy-policy')">Privacy Policy</a>
+              <RouterLink to="/privacyPolicy" class="footer__link">Privacy Policy</RouterLink>
             </div>
           </div>
         </div>
@@ -231,16 +246,10 @@
 
 <script setup lang="ts">
 import AccordionGroup from '@/components/AccordionGroup.vue'
+import { RouterLink } from 'vue-router'
 
 const scrollToHowItWorks = () => {
   const element = document.getElementById('how-it-works')
-  if (element) {
-    element.scrollIntoView({ behavior: 'smooth' })
-  }
-}
-
-const scrollToSection = (sectionId: string) => {
-  const element = document.getElementById(sectionId)
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' })
   }
@@ -712,6 +721,7 @@ const faqs = [
   padding: 64px 0;
   background: var(--color-background);
   position: relative;
+  scroll-margin-top: 100px;
 }
 
 .features::after {
@@ -787,6 +797,7 @@ const faqs = [
   padding: 64px 0;
   background: var(--color-background-secondary);
   border-bottom: 1px solid var(--color-border);
+  scroll-margin-top: 100px;
 }
 
 .steps {
@@ -834,6 +845,7 @@ const faqs = [
   padding: 64px 0;
   background: var(--color-background-secondary);
   border-bottom: 1px solid var(--color-border);
+  scroll-margin-top: 100px;
 }
 
 .faq-content {

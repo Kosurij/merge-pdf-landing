@@ -12,17 +12,17 @@
     <!-- ✅ Критические стили -->
     <style>
         :root {
-            --color-text: #EFEFEF;
-            --step-background: #2A2A2A;
-            --step-text: #EFEFEF;
-            --color-gray: #ffffffaa;
+            --welcome-color-text: #EFEFEF;
+            --welcome-step-background: #2A2A2A;
+            --welcome-step-text: #EFEFEF;
+            --welcome-color-gray: #ffffffaa;
         }
 
         html, body {
             margin: 0;
             padding: 0;
             background: #1C1C1C;
-            color: var(--color-text);
+            color: var(--welcome-color-text);
             font-family: 'Roboto', sans-serif;
             font-size: 16px;
             line-height: 1.5;
@@ -34,7 +34,7 @@
             flex-direction: column;
             align-items: center;
             padding: 32px 16px 120px 32px;
-            color: var(--color-text);
+            color: var(--welcome-color-text);
         }
 
         .welcome-header {
@@ -42,12 +42,12 @@
             margin-bottom: 48px;
         }
 
-        .title {
+        .welcome-title {
             font-size: 48px;
             font-weight: 800;
         }
 
-        .steps {
+        .welcome-steps {
             display: flex;
             flex-direction: column;
             gap: 48px;
@@ -55,11 +55,11 @@
             max-width: 1080px;
         }
 
-        .step-row {
+        .welcome-step-row {
             display: flex;
             flex-direction: column;
             align-items: center;
-            background: var(--step-background);
+            background: var(--welcome-step-background);
             padding: 32px 16px;
             border-radius: 16px;
             gap: 16px;
@@ -68,7 +68,7 @@
                     0 4px 24px rgba(0, 0, 0, 0.08);
         }
 
-        .step-row-image {
+        .welcome-step-row-image {
             width: 100%;
             height: auto;
             border-radius: 12px;
@@ -76,36 +76,36 @@
             object-fit: contain;
         }
 
-        .step-row-text {
+        .welcome-step-row-text {
             text-align: center;
         }
 
-        .step-row-text h2 {
+        .welcome-step-row-text h2 {
             font-size: 20px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: var(--step-text);
+            color: var(--welcome-step-text);
         }
 
-        .step-row-text p {
+        .welcome-step-row-text p {
             font-size: 16px;
-            color: var(--color-gray);
+            color: var(--welcome-color-gray);
             margin: 0;
             line-height: 1.6;
         }
 
         @media (min-width: 900px) {
-            .step-row {
+            .welcome-step-row {
                 flex-direction: row;
                 justify-content: space-between;
                 text-align: left;
             }
 
-            .step-row-image {
+            .welcome-step-row-image {
                 width: 70%;
             }
 
-            .step-row-text {
+            .welcome-step-row-text {
                 width: 30%;
                 text-align: left;
             }
