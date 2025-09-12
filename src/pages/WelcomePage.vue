@@ -73,7 +73,24 @@ import PuzzleIcon from '/src/assets/puzzle.svg'
 
 const { launchConfetti } = useConfetti()
 
-onMounted(launchConfetti)
+onMounted(() => {
+  launchConfetti()
+  
+  // Добавляем мета-теги для предотвращения индексации
+  document.title = 'Welcome - Combine PDF'
+  
+  // Удаляем существующий robots meta если есть
+  const existingRobots = document.querySelector('meta[name="robots"]')
+  if (existingRobots) {
+    existingRobots.remove()
+  }
+  
+  // Добавляем noindex
+  const robotsMeta = document.createElement('meta')
+  robotsMeta.name = 'robots'
+  robotsMeta.content = 'noindex, nofollow'
+  document.head.appendChild(robotsMeta)
+})
 </script>
 
 <style scoped>

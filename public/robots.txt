@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Блокируем служебные страницы
+Disallow: /uninstall
+Disallow: /welcome
+
+Sitemap: https://combine-pdf.pro/sitemap.xml
+
+# Блокируем ненужные директории
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.git/

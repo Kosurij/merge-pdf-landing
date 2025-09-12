@@ -17,6 +17,21 @@ import { onMounted } from 'vue'
 
 onMounted(() => {
   document.documentElement.setAttribute('data-theme', 'light')
+  
+  // Добавляем мета-теги для предотвращения индексации
+  document.title = 'Uninstall - Combine PDF'
+  
+  // Удаляем существующий robots meta если есть
+  const existingRobots = document.querySelector('meta[name="robots"]')
+  if (existingRobots) {
+    existingRobots.remove()
+  }
+  
+  // Добавляем noindex
+  const robotsMeta = document.createElement('meta')
+  robotsMeta.name = 'robots'
+  robotsMeta.content = 'noindex, nofollow'
+  document.head.appendChild(robotsMeta)
 })
 </script>
 
