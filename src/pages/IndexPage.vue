@@ -141,14 +141,15 @@
         
         <!-- Video Tutorial -->
         <div class="video-tutorial">
-          <div class="video-container">
-            <iframe 
-              src="https://www.youtube.com/embed/TR6j5O9A4x0" 
+          <div class="video-container" ref="videoContainer">
+            <iframe
+              v-if="videoLoaded"
+              src="https://www.youtube.com/embed/TR6j5O9A4x0?autoplay=0&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=1&cc_load_policy=0&loop=0"
               title="How to Combine PDF Files - Tutorial"
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
-              loading="lazy">
+              class="youtube-iframe">
             </iframe>
           </div>
         </div>
@@ -259,6 +260,7 @@
 <script setup lang="ts">
 import AccordionGroup from '@/components/AccordionGroup.vue'
 import { RouterLink } from 'vue-router'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 
 const faqs = [
@@ -305,8 +307,42 @@ const faqs = [
   {
     title: 'Is it free to use?',
     description:
-        'Yes, Combine PDF is free for everyday use. Core features — Quick Merge and Page-to-Page — are fully accessible.',
+      'Yes, Combine PDF is free for everyday use. Core features — Quick Merge and Page-to-Page — are fully accessible.',
   }]
+
+// Ленивая загрузка видео
+const videoLoaded = ref(false)
+const videoContainer = ref<HTMLElement | null>(null)
+
+// Intersection Observer для ленивой загрузки при скролле
+onMounted(() => {
+  if (!videoContainer.value) return
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && !videoLoaded.value) {
+          // Загружаем видео когда пользователь доскроллил до него
+          videoLoaded.value = true
+          observer.unobserve(entry.target)
+        }
+      })
+    },
+    {
+      rootMargin: '100px', // Загружаем за 100px до появления в viewport
+      threshold: 0.1
+    }
+  )
+
+  observer.observe(videoContainer.value)
+
+  // Cleanup
+  onUnmounted(() => {
+    if (videoContainer.value) {
+      observer.unobserve(videoContainer.value)
+    }
+  })
+})
 </script>
 
 <style scoped>
@@ -819,6 +855,16 @@ const faqs = [
 }
 
 .video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* YouTube iframe стили */
+.youtube-iframe {
   position: absolute;
   top: 0;
   left: 0;
