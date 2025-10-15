@@ -138,6 +138,21 @@
     <section class="how-it-works" id="how-it-works">
       <div class="container">
         <h2 class="section-title">How it works</h2>
+        
+        <!-- Video Tutorial -->
+        <div class="video-tutorial">
+          <div class="video-container">
+            <iframe 
+              src="https://www.youtube.com/embed/TR6j5O9A4x0" 
+              title="How to Combine PDF Files - Tutorial"
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              allowfullscreen
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
         <div class="steps">
           <div class="step">
             <div class="step__number">1</div>
@@ -779,6 +794,40 @@ const faqs = [
   scroll-margin-top: 50px;
 }
 
+/* Video Tutorial */
+.video-tutorial {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 24px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+}
+
+.video-container::before {
+  content: '';
+  display: block;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+
 .steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -947,6 +996,11 @@ const faqs = [
 
   .steps {
     grid-template-columns: 1fr;
+  }
+
+  .video-container {
+    max-width: 100%;
+    margin: 0 16px 24px;
   }
 
   .btn--large {
