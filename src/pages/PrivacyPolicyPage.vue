@@ -149,7 +149,12 @@
 </template>
 
 <script setup lang="ts">
-// Компонент для страницы политики конфиденциальности
+import { onMounted } from 'vue'
+
+// Скроллим в начало страницы при загрузке
+onMounted(() => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
+})
 </script>
 
 <style scoped>

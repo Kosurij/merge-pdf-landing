@@ -354,6 +354,18 @@ onMounted(() => {
       observer.unobserve(videoContainer.value)
     }
   })
+
+  // Обработка якорей при загрузке страницы
+  const hash = window.location.hash
+  if (hash) {
+    // Небольшая задержка для корректного скролла
+    setTimeout(() => {
+      const element = document.querySelector(hash)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+    }, 100)
+  }
 })
 </script>
 

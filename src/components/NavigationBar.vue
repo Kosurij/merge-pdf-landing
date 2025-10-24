@@ -77,6 +77,15 @@ const toggleTheme = () => {
 }
 
 const scrollToSection = (sectionId: string) => {
+  // Проверяем, находимся ли мы на главной странице
+  const currentPath = window.location.pathname
+  if (currentPath !== '/') {
+    // Если не на главной странице, переходим на главную с якорем
+    window.location.href = `/#${sectionId}`
+    return
+  }
+  
+  // Если на главной странице, скроллим к секции
   const element = document.getElementById(sectionId)
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' })
