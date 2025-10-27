@@ -140,17 +140,30 @@
         <h2 class="section-title">How it works</h2>
         
         <!-- Video Tutorial -->
-        <div class="video-tutorial">
+        <div class="video-tutorial" itemscope itemtype="https://schema.org/VideoObject">
+          <meta itemprop="name" content="How to Combine PDF Files - Tutorial">
+          <meta itemprop="description" content="Watch this quick tutorial to see how easy it is to combine PDF files with our Chrome extension">
+          <meta itemprop="thumbnailUrl" content="https://img.youtube.com/vi/TR6j5O9A4x0/maxresdefault.jpg">
+          <meta itemprop="uploadDate" content="2025-01-01">
+          <meta itemprop="duration" content="PT2M30S">
+          <meta itemprop="embedUrl" content="https://www.youtube.com/embed/TR6j5O9A4x0">
+          <meta itemprop="url" content="https://www.youtube.com/watch?v=TR6j5O9A4x0">
+          
           <div class="video-container" ref="videoContainer">
             <iframe
               v-if="videoLoaded"
-              src="https://www.youtube.com/embed/TR6j5O9A4x0?autoplay=0&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=1&cc_load_policy=0&loop=0"
+              src="https://www.youtube.com/embed/TR6j5O9A4x0?autoplay=0&mute=0&controls=1&showinfo=0&rel=0&modestbranding=1&iv_load_policy=3&fs=1&cc_load_policy=0&loop=0&enablejsapi=1&origin=https://combine-pdf.pro"
               title="How to Combine PDF Files - Tutorial"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
               class="youtube-iframe">
             </iframe>
+          </div>
+          <div class="video-link">
+            <a href="https://www.youtube.com/watch?v=TR6j5O9A4x0" target="_blank" rel="noopener noreferrer" class="watch-on-youtube" itemprop="url">
+              Watch on YouTube
+            </a>
           </div>
         </div>
 
@@ -885,6 +898,38 @@ onMounted(() => {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+.video-link {
+  margin-top: 16px;
+}
+
+.watch-on-youtube {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #ff0000;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
+}
+
+.watch-on-youtube:hover {
+  background: #cc0000;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
+  text-decoration: none;
+  color: white;
+}
+
+.watch-on-youtube::before {
+  content: '▶';
+  font-size: 12px;
 }
 
 /* YouTube iframe стили */
