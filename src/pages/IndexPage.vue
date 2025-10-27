@@ -160,11 +160,6 @@
               class="youtube-iframe">
             </iframe>
           </div>
-          <div class="video-link">
-            <a href="https://www.youtube.com/watch?v=TR6j5O9A4x0" target="_blank" rel="noopener noreferrer" class="watch-on-youtube" itemprop="url">
-              Watch on YouTube
-            </a>
-          </div>
         </div>
 
         <div class="steps">
@@ -900,37 +895,6 @@ onMounted(() => {
   border: none;
 }
 
-.video-link {
-  margin-top: 16px;
-}
-
-.watch-on-youtube {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 12px 24px;
-  background: #ff0000;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 500;
-  font-size: 14px;
-  transition: all 0.2s ease;
-  box-shadow: 0 2px 8px rgba(255, 0, 0, 0.3);
-}
-
-.watch-on-youtube:hover {
-  background: #cc0000;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.4);
-  text-decoration: none;
-  color: white;
-}
-
-.watch-on-youtube::before {
-  content: '▶';
-  font-size: 12px;
-}
 
 /* YouTube iframe стили */
 .youtube-iframe {
